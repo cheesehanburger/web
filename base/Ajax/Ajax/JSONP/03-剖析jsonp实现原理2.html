@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jsonp实现原理 -->
+    <!-- 1 在用户端定义一个回调函数
+         2 通过script的scr属性向服务器请求一个接口
+         3 通过查询字符串的方式告诉服务器需要调用哪个函数，服务器端调用这个函数 -->
+
+         <!-- 本地：定义函数 -->
+    <script>
+        function success(data) {
+            console.log('拿到了Data数据:')
+            console.log(data)
+        }
+    </script>
+    <!-- 服务器：调用函数 -->
+    <script src="./js/getdata.js?callback=success">
+    </script>
+</body>
+</html>

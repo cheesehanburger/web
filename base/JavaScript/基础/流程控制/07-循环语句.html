@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let i = 1
+        // while循环
+        while(i <= 3) {
+            document.write(`这是第${i}次循环<br>`)
+            i++
+        }
+
+        // 案例：1-100之间偶数和
+        let j = 1
+        let sum = 0
+        while (j <= 100) {
+            if (j % 2 === 0) {
+                sum += i
+            }
+            i++
+        }
+
+        // continue 和 break
+        // continue  结束本次循环进入下一次循环
+        // break 直接跳出循环
+
+        //for循环
+        for (let i = 0; i < 10; i++) {
+            document.write('月薪过万')
+        }
+        
+        // 乘法口诀表
+        for (let i = 1; i <= 9; i++) {
+            for(let j = 1; j <= i; j++) {
+                document.write(`${j} * ${i} = ${j*i}  `)
+            }
+            document.write('<br>')
+        }
+    </script>
+</body>
+</html>

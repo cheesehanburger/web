@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fun(x, y) {
+            return x + y
+        }
+
+        //实参个数小于形参个数
+        fun(1)   // 1 + undefined -> NaN
+        //实参个数大于新参个数
+        fun(1, 2, 3)  //丢弃一个
+
+        // 关于arguments 伪数组 （函数内有效）
+        // 比真数组少了pop push 等方法
+        function f() {
+            console.log(arguments)
+        }
+        fun(1, 2, 3)
+        // arguments 用来存放实参
+    </script>
+</body>
+
+</html>

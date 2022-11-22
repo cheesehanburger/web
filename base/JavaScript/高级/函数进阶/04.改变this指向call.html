@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 改变this指向的三种方法： call() apply() bind()
+
+        //  1.call()
+        let obj = {}
+        function f(x) {
+            console.log(this)
+            console.log(x)
+        }
+        // call 可以调用函数，也可以改变函数this指向
+        f.call(obj,1)
+
+        // 使用场景：常用作继承
+        function Father() {}
+        function Son() {
+            Father.call(this)
+        }
+    </script>
+</body>
+</html>

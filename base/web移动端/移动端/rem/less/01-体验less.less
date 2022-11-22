@@ -1,0 +1,11 @@
+// less 使得css具有一定的逻辑处理能力
+.father {
+    color: red;
+    // 快速生成rem到px的转换
+    width: (68 / 37.5rem);
+
+    // 这样会自动生成后代选择器
+    .son {
+        background-color: pink;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .activity {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <script>
+        //classList属性   就是用来解决className的覆盖问题的，它的方式是追加类
+        let box = document.querySelector('div')
+
+        //add()方法   追加类
+        box.classList.add('activity')
+        //remove()    移除类
+        box.classList.remove('one')
+        // toggle()   切换类----有则删除，无则添加
+        box.classList.toggle('one')
+        // contains() 包含类---有则ture，无则false
+        box.classList.contains('one')
+    </script>
+</body>
+</html>

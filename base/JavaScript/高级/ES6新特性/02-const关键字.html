@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const关键字声明的是常量,声明的时候必须赋值,一旦赋值后不可更改
+        // const关键字同样具有块级作用域
+        const con = 10
+        // con = 20      //对于简单数据类型,不可重新赋值
+        const obj = {
+            name: 'han',
+            age: 18
+        }
+        obj.name = 'lu'   //对于复杂数据类型,引用地址是不能更改的,但是属性却可以更改
+        console.log(obj)
+    </script>
+</body>
+</html>

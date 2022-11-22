@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>透视效果</title>
+  <style>
+
+    /* 透视效果 persipective 添加给父级 */
+    /* 他表示的是视距,表示人眼到屏幕的距离 */
+    /* 越小越明显 */
+    body {
+      /* 一般建议数值为800-1200px */
+      perspective: 1200px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: pink;
+      transition: all 0.5s;
+    }
+
+    .box:hover{
+      transform: translateZ(100px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

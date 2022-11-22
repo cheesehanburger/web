@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深拷贝拷贝多层, 每一级别的数据都会拷贝.这样相当于将所有数据都拷贝了一份数据,而不是简单的地址引用
+        function deepCopy(newData, oldData) {
+            for (let item in oldData) {
+                //复杂数据类型仍然会向深层次拷贝
+                if (oldData[item] instanceof Array) {
+                    newData[item] = []
+                    deepCopy(newData[item],oldData[item])
+                } else if ( oldData[item] instanceof Object) {
+                    newData[item] = {}
+                    deepCopy(newData[item],oldData[item])
+                } else {
+                    // 只有简单数据才会直接赋值
+                    newData[item] = oldData[item]
+                }
+            }
+        }
+        let obj = {
+            name: 'han',
+            age: 18,
+            book: ['yuwen','shuxue','yingyu'] ,
+            parent: {
+                name: "dad",
+                age: 37
+            }
+        }
+        let o = {}
+        deepCopy(o,obj)
+        // 每一层的数据都是精确到简单数据级别的拷贝,实现了数值的拷贝而不是地址的引用,所以篡改不影响被拷贝的数据
+        o.book[1] = 'wuli'
+        o.parent.name = 'mum'
+        console.log(o)
+        console.log(obj)
+    </script>
+</body>
+
+</html>

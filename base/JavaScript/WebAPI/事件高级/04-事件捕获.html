@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // 事件捕获
+        // 所谓捕获事件就是,如果子级和父辈级有(同种事件),那么会从父级到子级冒泡执行
+        // 事件捕获需要写对应的代码才能实现
+        // DOM.addEventListener('事件类型', function() {},true)
+        // 传入false是冒泡阶段触发(默认就是),传入true是事件捕获阶段触发
+        let father = document.querySelector('.father')
+        let son = document.querySelector('.son')
+        father.addEventListener('click', function() {
+            alert('我是父级')
+        },true)
+        son.addEventListener('click', function() {
+            alert('我是子级')
+        },true)
+    </script>
+</body>
+</html>

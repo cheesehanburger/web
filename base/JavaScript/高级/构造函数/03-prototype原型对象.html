@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原型的作用就是共享方法
+        // 原理：每一个构造函数都有一个prototype属性，指向一个对象，这个prototype就是对象
+        // 原型解决构造函数的内存浪费问题
+        function People(uname,age) {
+            // 实例成员就是构造函数内部通过this添加的成员
+            this.uname = uname
+            this.age = age
+            this.sing = function() {
+                console.log('我会唱歌')
+            }
+        }
+
+        People.prototype.run = function() {
+            console.log('我会跑')
+        }
+
+        let han = new People('han',18)
+        han.run()
+        //2.一般情况下，我们的公共属性定义到构造函数里面，公共的方法放在原型对象身上 
+
+
+
+    </script>
+</body>
+</html>

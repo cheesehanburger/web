@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        tr {
+            height: 40px;
+            cursor: pointer;
+        }
+        tr:first-child{
+            background-color: #ddd;
+            font-weight: bolder;
+        }
+        tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //数组可以存放任何类型的数据
+        let arr = [1, 'han', true, undefined, null, {}, []]
+        //存放了多个对象的数组（开发常用场景）
+        let students = [
+            { name: 'han', age: 16, gender: '男', hometown: '江苏' },
+            { name: 'wang', age: 16, gender: '男', hometown: '江苏' },
+            { name: 'he', age: 16, gender: '男', hometown: '江苏' },
+            { name: 'chen', age: 16, gender: '男', hometown: '江苏' },
+        ]
+
+        //渲染表格
+        document.write('<table>')
+        document.write('<caption>学生成绩表</caption>')
+        document.write(`
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+        `)
+        for (let i = 0; i < students.length; i++) {
+            document.write('<tr>')
+            document.write(`
+            <td>${i+1}</td>
+            `)
+            for(let emu in students[i]) {
+                document.write(`
+                <td>${students[i][emu]}</td>
+                `)
+            }
+            document.write('</tr>')
+        }
+        document.write('</table>')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ---------localStorage(只能存简单数据类型，字符串，数字等)-------
+        // 生命周期永久生效，除非手动删除 否则关闭页面也会存在
+        // 可以多窗口（页面）共享（同一浏览器可以共享）
+        // 以键值对的形式存储使用
+
+        // 方式：localStorage.setItem(key,value)
+        localStorage.setItem('uname','han')
+        localStorage.setItem('age',18)
+        // 获取数据
+        console.log(localStorage.getItem('uname'));
+        // 删除数据
+        localStorage.removeItem('uname')
+
+        // 存储复杂数据类型（引用数据）
+        let obj = {
+            name: 'han',
+            age: 22,
+            address: 'nanjin'
+        }
+        // 不推荐
+        // localStorage.setItem('obj', obj)
+
+        // 使用json格式  属性和值都用双引号包含
+        // 存储
+        localStorage.setItem('obj',JSON.stringify(obj))     //JSON.stringify(复杂数据) 转化为 JSON字符串
+        // 获取
+        let get = JSON.parse(localStorage.getItem('obj'))   //JSON.parse(Json数据)  转化为 原复杂数据类型
+        console.log(get)
+    </script>
+</body>
+</html>

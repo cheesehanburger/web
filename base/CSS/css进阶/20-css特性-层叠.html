@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 同一个标签不同样式->样式会叠加 */
+        /* 同一个标签相同样式->样式会覆盖 */
+        /* 注意:当样式冲突时,只有当选择器优先级相同时,才能通过层叠性判断 */
+        div {
+            color: red;
+            color: green;
+        }
+        .box {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">文字颜色</div>
+</body>
+</html>

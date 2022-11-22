@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //三个逻辑运算符  && || !
+
+
+        // 存在于&& ||中的短路现象
+        console.log(false && 20)  //false , &&左边是false，则直接短路为false
+        console.log(true || 20)   //true, ||左边是true，则直接短路为true
+        console.log(undefined && 20)  //undefined
+        console.log(null && 20) //null
+
+        // 有6个值作为false看待：false ， 数字0（其他数字为true），空字符串''（其他字符串为true），undefined，null，NaN
+        console.log(0 && 20)  // 0
+        console.log(10 && 20) //20  &&不短路以后面为准
+        console.log(10 || 20) //10  10为真直接短路
+
+        // 优先级
+        // 小括号（）
+        // 一元 ++ -- ！
+        // 算数 先 * / % 后 + -
+        // 比较  > >= < <=
+        // 相等   == != === !==
+        // 逻辑 先&& 后 ||
+        // 赋值  =
+        // 逗号  ，
+    </script>
+</body>
+</html>

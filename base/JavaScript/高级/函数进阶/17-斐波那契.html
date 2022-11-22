@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1,1,2,3,5,8,13,21
+        // 输入一个数字n,就可以求出这个数字对应的斐波那契数列值
+        //(n-2)(n-1)就可以计算出n对应的值
+        function fun(n) {
+            if ( n === 2 || n ===1) {
+                return 1
+            }
+            return fun(n-1) + fun(n-2)
+        }
+        console.log(fun(4))
+    </script>
+</body>
+</html>

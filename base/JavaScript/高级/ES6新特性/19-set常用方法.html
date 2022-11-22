@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const s = new Set()
+        // add 添加值,可以链式调用
+        s.add('a').add('b').add('c')
+        // delete 删除值,会返回一个boolean值查看是否删除成功
+        const r1 = s.delete('c')
+        // has 判断是否有该成员,会返回一个boolean
+        const r2 = s.has('c')
+        console.log(r1, r2)
+        // clear 会清空所有set成员
+        console.log(s)
+        s.clear()
+        console.log(s.size)
+
+        // forEach()方法,跟数组类似,用于遍历
+        let s1 = new Set(['a', 'b', 'c', 'd'])
+        s1.forEach(item => { console.log(item) })
+    </script>
+</body>
+
+</html>

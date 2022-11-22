@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 15px solid red;
+            margin: 20px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function () {
+            // 1 width() / height() 获取和设置元素的宽高（不包含边距和边框）,无需带单位
+            console.log($('div').width())
+            // $('div').width(300)
+
+            // 2 innerWidth() / innerHeight() 获取和设置元素的width+padding的大小
+            console.log($('div').innerWidth())
+            // 3 outerWidth() / outerHeight() 获取和设置元素的width+padding+border的大小
+            console.log($('div').outerWidth())
+            // 4 outerWidth(ture) / outerHeight() 获取和设置元素的width+padding+border+margin的大小
+            console.log($('div').outerWidth(true))
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10">
+        欢迎使用，请细看协议
+    </textarea>
+    <br>
+    <button class="btn" disabled>我已阅读用户协议(<span></span>)</button>
+    <script>
+        //获取元素
+        let btn = document.querySelector('.btn')
+        let span = document.querySelector('.btn span')
+        //倒计总时间
+        let num = 6
+        function jian() {
+            span.innerHTML = num
+            if (num === 0) {
+                clearInterval(timer)
+                btn.disabled = false
+            }
+            num --
+        }
+        let timer = setInterval(jian,1000)
+    </script>
+</body>
+</html>

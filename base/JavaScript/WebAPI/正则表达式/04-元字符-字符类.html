@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符类
+        // [abc] 表示要包含其中任意一个字符
+        console.log(/[abc]/.test('ab'))
+        console.log(/[abc]/.test('andy'))
+        console.log(/[abc]/.test('cry'))
+
+        console.log('---------------')
+        // 连字符 - 
+        // [a-z] 表示a-z 26个字母都可以
+        // [a-zA-Z] 表示大小写都可以
+        // [0,9] 表示数字都可以
+        console.log(/^[a-z]$/.test('ab'))
+        console.log(/^[a-z]$/.test('a'))
+        console.log(/^[a-z]$/.test('z'))
+
+        console.log(/^[a-zA-Z]$/.test('Z'))
+        console.log(/^[a-zA-Z]$/.test('D'))
+
+        console.log(/^[a-zA-Z0-9]$/.test('6'))
+        // 包含大小写，数字，短横线，下划线
+        console.log(/^[a-zA-Z0-9-_]$/.test('6'))
+
+        // 取反号
+        // []内部的^ 表示取反号
+
+        // . 匹配换行符之外的任何单个字符
+    </script>
+</body>
+
+</html>

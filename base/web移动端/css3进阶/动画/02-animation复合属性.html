@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation复合属性</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* --取值不分先后-- */
+            /* 符合属性 : 动画名称 动画时长 速度曲线 延迟时间 重复次数 动画方向 执行完毕时间 */
+
+            /* 线性动画 linear*/
+            /* animation: move 1s linear; */
+            /* 分步动画 step*/
+            animation: move 1s steps(3);
+
+            /* 延迟时间 */
+            /* animation: move 1s steps(3) 1s; */
+
+            /* 重复次数  infinite无限循环 */
+            /* animation: move 1s infinite; */
+
+            /* 动画方向 alternate往返动画*/
+            /* animation: move 1s infinite alternate; */
+
+            /* 执行完毕状态    要取消重复次数 动画方向*/
+            /* forwards动画停留在最终状态 */
+            /* backwards是默认值,动画停留在初始状态*/
+            /* animation: move 1s forwards; */
+            
+            /*注意: 动画的属性 前两个必须写 如果有两个时间 那么第一个是动画时长 第二个是延时时间 */
+        }
+        @keyframes move {
+            from {
+                width: 200px;
+            }
+            to {
+                width: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body style="padding: 15px;">
+    <!-- 评论面板 -->
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">发表评论</h3>
+        </div>
+        <div class="panel-body">
+            <!-- 表单的name要和接口文档的属性名保持一致 -->
+            <form action="" class="discusspanel">
+                <div>评论人:</div>
+                <input type="text" name="username" class="form-control">
+                <div>评论内容:</div>
+                <textarea name="content" class="form-control"></textarea>
+                <button type="submit" class="btn-primary">发表评论</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 评论列表-->
+
+    <ul class="list-group discusslist">
+        <li class="list-group-item discussitem">
+            <span class="badge" style="background-color: #f0ad4e;">评论时间:</span>
+            <span class="badge" style="background-color: #5BC0DE;">评论人:</span>
+            item
+        </li>
+    </ul>
+
+    <script>
+        $(function () {
+            $('.discusspanel').on('submit', function (e) {
+                e.preventDefault()
+                let data = $(this).serialize()   //得到的格式是usename=han&content=hello
+                // post会自动解析这种数据格式
+                $.post('http://www.liulongbin.top:3006/api/addcmt', data, function (res) {
+                    if (res.status !== 201) {
+                        alert('糟糕,貌似出现了点问题')
+                    } else {
+                        getCommentList()
+                        // 清空表单内容:先将jquery转化为dom对象,然后调用reset()
+                        $('.discusspanel')[0].reset()
+                    }
+                })
+            })
+            getCommentList()
+            function getCommentList() {
+                $.ajax({
+                    method: 'GET',
+                    url: 'http://www.liulongbin.top:3006/api/cmtlist',
+                    data: {},
+                    success: function (res) {
+                        if (res.status === 200) {
+                            let items = res.data
+                            let rows = []
+                            $.each(items, function (index, ele) {
+                                rows.push(`
+                                <li class="list-group-item discussitem">
+                                    <span class="badge" style="background-color: #f0ad4e;">评论时间:${ele.time}</span>
+                                    <span class="badge" style="background-color: #5BC0DE;">评论人:${ele.username}</span>
+                                    ${ele.content}
+                                </li>
+                                `)
+                            })
+                            // 渲染到页面
+                            $('.discusslist').html(rows.join(''))
+                        }
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

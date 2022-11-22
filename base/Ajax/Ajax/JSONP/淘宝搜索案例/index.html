@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <!-- 导入页面的基本样式 -->
+  <link rel="stylesheet" href="./css/search.css" />
+  <!-- 导入 jQuery -->
+  <script src="./lib/jquery.js"></script>
+  <!-- 导入模板引擎 -->
+  <script src="./lib/template-web.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <img src="./images/taobao_logo.png" alt="" class="logo" />
+
+    <div class="box">
+      <!-- tab 栏 -->
+      <div class="tabs">
+        <div class="tab-active">宝贝</div>
+        <div>店铺</div>
+      </div>
+      <!-- 搜索区域（搜索框和搜索按钮） -->
+      <div class="search-box">
+        <input type="text" class="ipt" placeholder="请输入要搜索的内容" /><button class="btnSearch">
+          搜索
+        </button>
+      </div>
+
+      <!-- 搜索建议列表 -->
+      <div id="suggestlist">
+      </div>
+    </div>
+  </div>
+
+  <!-- 定义模板引擎 -->
+  <script type="text/html" id="tpl-suggestlist">
+    {{each result}}
+    <div class="suggest-item">{{$value[0]}}</div>
+    {{/each}}
+  </script>
+
+  <script>
+    $(function () {
+      // 设置防抖效果
+      // 1.定时器
+      let timer = null
+      // 定义全局缓存对象
+      let cacheObj = {}
+      // 2.定义防抖函数
+      function debounceSearch(kw) {
+        timer = setTimeout(function () {
+          getSuggestList(kw)
+        }, 500)
+      }
+
+      $('.ipt').on('keyup', function (e) {
+        let content = $(this).val().trim()
+        if (content.length <= 0) {
+          //若关键词为空则也需要清空并隐藏推荐
+          return $('#suggestlist').empty().hide()
+        }
+        clearTimeout(timer)
+
+        // 这里做一个判断：若缓存中有关键字的推荐数据则直接使用缓存数据，没有则发起服务器请求
+        if (cacheObj[content]) {
+          renderSuggestList(cacheObj[content])
+        } else {
+          // 获取搜索建议列表，不会立马执行数据的请求，而是先延时一段时间等待最终结果后，在发送请求，达到节省资源的效果
+          // 每当有输入的时候清除上一个延时器，开启新的延时器，从而达到防抖效果
+          debounceSearch(content)
+        }
+      })
+
+      // 给建议项目添加一个点击事件
+      $('#suggestlist').on('click', '.suggest-item', function () {
+        $('.ipt').val($(this).html())
+        // 点击推荐项目后关闭推荐栏
+        $('#suggestlist').empty().hide()
+      })
+
+      // 通过jsonp获取建议列表的数据
+      function getSuggestList(kw) {
+        $.ajax({
+          url: 'https://suggest.taobao.com/sug?q=' + kw,
+          dataType: 'jsonp',
+          success: function (res) {
+            // 服务器获取的数据，将搜索的结果，通过键值对的方式，都放在缓存对象当中
+            let key = $('.ipt').val().trim()
+            cacheObj[key] = res
+            renderSuggestList(res)
+          }
+        })
+      }
+      // 渲染函数
+      function renderSuggestList(res) {
+
+        if (res.result.length <= 0) {
+          return $('#suggestlist').empty().hide()
+        } else {
+          // 通过渲染引擎获得渲染数据
+          let htmlstr = template('tpl-suggestlist', res)
+          $('#suggestlist').html(htmlstr).show()
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>

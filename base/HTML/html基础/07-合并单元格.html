@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- rowspan跨行合并 colspan跨列合并，不可跨结构合并 -->
+    <table border="1" width = "500" height = "300">
+        <thead>
+            <tr>
+                <td>属性名</td>
+                <td>属性值</td>
+                <td>效果</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>border</td>
+                <td rowspan="3">数字</td>
+                <td>边框宽度</td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>表格宽度</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>表格高度</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>总结</td>
+                <td colspan="2">规范工整</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

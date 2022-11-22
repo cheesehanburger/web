@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .activity {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <script>
+        // 如果修改的样式比较多，则使用className来设置css中的类选择器
+        // 优点：可以设置大量的属性    缺点：会覆盖原有的class
+        //获取元素
+        let box = document.querySelector('div')
+        //className会以新值换旧值，意味着会覆盖已有的class
+        box.className = 'activity'
+        // box.className = 'one activity'  可以这样来防止覆盖
+    </script>
+</body>
+</html>

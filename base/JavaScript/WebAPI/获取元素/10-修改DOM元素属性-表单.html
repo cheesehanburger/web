@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="请输入">
+    <button disabled>按钮</button>
+    <input type="checkbox" name="" id="" class="check">
+    <script>
+        // 表单元素的属性修改
+        
+        // 获取元素
+        let input = document.querySelector('input')
+        // 获取元素的值
+        console.log(input.value)  //得到值
+        input.value = '小米手机'          //设置值
+        input.type = 'password'    //修改表单类型
+
+        // disabled  selected  checked  都是boolean值，ture表示可用,false表示不可用
+
+        // 禁止启用按钮
+        let btn =document.querySelector('button')
+        btn.disabled = false
+        //勾选复选框
+        let checkbox = document.querySelector('.check')
+        checkbox.checked = true
+    </script>
+</body>
+</html>

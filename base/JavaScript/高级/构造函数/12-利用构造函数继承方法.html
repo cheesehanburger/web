@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //借用父构造函数继承属性
+        function Father(uname,age) {
+            this.name = uname
+            this.age = age
+        }
+        Father.prototype.money = function() {
+            console.log('我会赚钱了')
+        }
+        function Son(uname,age) {
+            // 参数this指向的是子构造函数,通过call参数让父构造函数也指向子构造函数
+            Father.call(this,uname,age)
+        }
+        // 如果这样操作,那么子类和父类将会公用一个原型对象,会引起问题,如果修改子原型对象,父原型对象也会引起变化
+        // Son.prototype = Father.prototype
+
+        // 应该利用对象的形式修改原型对象
+        Son.prototype = new Father()
+        // 别忘了利用constructor指回原来的构造函数
+        Son.prototype.constructor = Son
+        Son.prototype.exam = function() {
+            console.log('孩子要考试')
+        }
+        let han  = new Son('han',34)
+        console.log(han)
+        console.log(Father.prototype)
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url(../images/f1_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    /*background-size更改背景图大小*/
+    /* contain 宽或高其中之一到达盒子后停止缩放 */
+    /* cover 宽或高其中最小的一个到达盒子后停止缩放*/
+    background-size: cover;
+}
+
+/* 1 img引入图片控制位置 */
+/* 2.定义动画使用动画 */
+
+/* 先将图片定位在中间,在进行位移*/
+.cloud img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+/* 将动画给三个云朵分别添加 */
+/* 加上不同的延时,实现不同步的动画效果 */
+.cloud img:nth-child(1) {
+    margin-left: -100px;
+    top: 20px;
+    animation: cloudshack 1s linear infinite alternate;
+}
+
+.cloud img:nth-child(2) {
+    margin-left: -400px;
+    top: 150px;
+    animation: cloudshack 1s 0.3s linear infinite alternate;
+}
+
+.cloud img:nth-child(3) {
+    margin-left: 400px;
+    top: 100px;
+    animation: cloudshack 1s 0.5s linear infinite alternate;
+}
+
+/* 添加云朵动画效果*/
+
+@keyframes cloudshack {
+    to {
+        transform: translate(-20px);
+    }
+}
+
+.qiqiu img {
+
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    width: 100px;
+    margin-left: -300px;
+    animation: qiqiujump 1s infinite alternate;
+}
+
+/* 气球动画 */
+@keyframes qiqiujump {
+    to {
+       transform: translateY(-20px);
+    }
+}
+
+
+.tip img {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    width: 80px;
+}
+
+.tip img:nth-child(1) {
+    margin-left: -400px;
+    animation: tiptok 1s 0.3s infinite alternate;
+}
+
+.tip img:nth-child(2) {
+    margin-left:-180px;
+    animation: tiptok 1s 0.5s infinite alternate;
+}
+
+.tip img:nth-child(3) {
+    margin-left: 80px;
+    animation: tiptok 1s infinite alternate;
+}
+
+.tip img:nth-child(4) {
+    margin-left: 320px;
+    animation: tiptok 1s 0.7s infinite alternate;
+}
+
+@keyframes tiptok {
+    to {
+        transform: translateY(-20px);
+    }
+}

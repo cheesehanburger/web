@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        // 将匿名函数赋值给一个变量，并且通过变量名进行调用，则称这个为函数表达式
+        let fn = function (x, y) {
+            console.log('调用函数表达式' + (x + y) )
+        }
+        //调用函数表达式
+        fn(2,3)
+
+        // 匿名函数使用场景：给按钮添加点击事件
+        let btn = document.querySelector('button')
+        //旧的写法
+        // btn.onclick = function() {
+        //     alert('月薪过万')
+        // }
+        //提倡写法
+        btn.addEventListener('click',function() {
+            alert('月薪过万')
+        })
+
+        
+    </script>
+</body>
+</html>

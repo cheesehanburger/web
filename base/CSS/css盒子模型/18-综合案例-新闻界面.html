@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 先清除所有默认值,方便后面自定义 */
+        * {
+            margin: 0px;
+            padding: 0px;
+            /* 所有的标签都有可能添加边距和边框，都为内减 */
+            box-sizing: border-box;
+        }
+        .box {
+            width: 500px;
+            /* 上下 左右 */
+            padding: 42px 30px;
+            border: 1px solid #cccccc;
+            margin: 50px auto;
+        }
+        .box h1 {
+            font-size: 30px;
+            line-height: 1;
+            padding-bottom: 9px;
+            border-bottom: 1px solid #cccccc;
+        }
+        ul {
+            /* 去掉列表符号 */
+            list-style: none;
+        }
+        .box li {
+            height: 50px;
+            line-height: 50px;
+            padding-left: 28px; 
+            border-bottom: 1px dashed #cccccc;
+        }
+        li a {
+            color: #666666;
+            font-size: 18px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>最新文章/New Articles</h1>
+        <ul>
+            <li><a href=""> 这是一篇新闻的平面设计 </a> </li>
+            <li><a href=""> 这是一篇新闻的平面设计 </a></li>
+            <li><a href=""> 这是一篇新闻的平面设计 </a></li>
+            <li><a href=""> 这是一篇新闻的平面设计 </a></li>
+            <li><a href=""> 这是一篇新闻的平面设计 </a></li>
+            <li><a href=""> 这是一篇新闻的平面设计 </a></li>
+            <li><a href=""> 这是一篇新闻的平面设计 </a></li>
+            <li><a href=""> 这是一篇新闻的平面设计 </a></li>
+            <li><a href=""> 这是一篇新闻的平面设计 </a></li>
+        </ul>
+    </div>
+</body>
+</html>

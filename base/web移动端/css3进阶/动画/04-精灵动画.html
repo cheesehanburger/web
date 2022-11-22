@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>精灵动画</title>
+  <style>
+    .box {
+      height: 140px;
+      width: 140px;
+      background-image: url(./images/bg.png);
+      /* 多组动画 */
+      /*animation: 动画1,
+                  动画2;*/
+      animation: move 1s infinite steps(11),
+      boxmove 5s linear forwards
+      ;
+    }
+    @keyframes move {
+      /* 动画开始状态和盒子默认状态相同,那么可以省略from */
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: right 0;
+      }
+    }
+    /* 盒子移动动画 */
+    @keyframes boxmove {
+      from {
+        transform: translate(0px);
+      }
+      to {
+        transform: translate(1000px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

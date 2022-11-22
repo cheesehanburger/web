@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.命名函数
+        function fn() {
+
+        }
+        // 2.匿名函数
+        let f = function() {
+        }
+        // 3.new方法 (不常用)
+        // var fn = new Function('参数1','参数2'..., '函数体')
+        let fun = new Function('a','b','console.log(a + b)')
+        fun(1,2)
+
+        // 所有的函数都是Function的实例,都是对象
+        console.log(fun instanceof Function)
+    </script>
+</body>
+</html>

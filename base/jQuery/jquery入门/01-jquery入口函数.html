@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 使用jquery方法隐藏
+        // $('div').hide()
+        // 1. 等待页面dom加载完毕再去执行js代码
+        // $(document).ready(function() {
+        //     $('div').hide()
+        // })
+        // 2. 等待页面dom加载完毕再去执行js代码 方法二
+        // 这就是入口函数：作用就是等待所有dom加载完成采取执行代码
+        $(function() {
+            $('div').hide()
+        })
+    </script>
+    <div></div>
+    
+</body>
+</html>

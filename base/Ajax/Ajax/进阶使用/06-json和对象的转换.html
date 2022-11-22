@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // json中的属性，字符串必须用双引号包围
+        let json = '{"a": "Hello", "b": "World"}'
+        // 序列化：数据对象转化为字符串
+        let obj = JSON.parse(json)
+        console.log(obj)
+
+        // 反序列化 字符串转化为数据对象
+        let json2 = JSON.stringify(obj)
+        console.log(json2) 
+    </script>
+</body>
+</html>

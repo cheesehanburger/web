@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1 定义UI结构 -->
+    <!-- 文本选择框 -->
+    <input type="file" name="" id="file">
+    <!-- 上传文件按钮 -->
+    <button id="upload">上传文件</button>
+    <br>
+    <!-- 显示上传到服务器的图片 -->
+    <img src="" alt="" id="img" width="400">
+
+    <script>
+        let uploadbtn = document.querySelector('#upload')
+        uploadbtn.addEventListener('click', function () {
+            //2. 获得选择的文件列表，并判断是否有文件
+            let files = document.querySelector('#file').files
+            console.log(files)
+            if (files.length <= 0) {
+                alert('请选择需要上传的文件')
+            } else {
+                // 3 向fromdate追加文件
+                let fd = new FormData()
+                fd.append('file', files[0])
+
+                // 4 使用xhr发起上传文件的请求
+                //  创建 xhr 对象
+                let xhr = new XMLHttpRequest()
+                //  调用 open 函数，指定请求类型与URL地址。其中，请求类型必须为 POST
+                xhr.open('post', 'http://www.liulongbin.top:3006/api/upload/avatar')
+                //  发起请求
+                xhr.send(fd)
+                // 5 监听事件
+                xhr.onreadystatechange = function () {
+                    if (xhr.status === 200 && xhr.readyState === 4) {
+                        let obj = JSON.parse(xhr.responseText)
+                        console.log(obj)
+                        if (obj.status === 200){
+                            let img = document.querySelector('#img')
+                            let url = 'http://www.liulongbin.top:3006' + obj.url
+                            img.src = url
+                        } else {
+                            console.log(obj.message)
+                        }
+
+                    }
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

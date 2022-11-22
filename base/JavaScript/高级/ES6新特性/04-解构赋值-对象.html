@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象解构允许我们使用变量的名字匹配对象的属性 匹配成功将对象属性的值赋值给变量
+        let Person = {
+            name: 'han',
+            age: 20,
+            sex: '男'
+        }
+        // 原方式
+        /*
+        let name = Person.name
+        let age = Person.age
+        let sex= Person.sex
+         */
+        // 对象解构
+        // 方法一:变量名字需要与属性名相同
+        let {name,age,sex} = Person
+        console.log(name,age,sex)
+        // 方法二:变量名字与属性名不同
+        let {name:uname,age:uage,sex:usex} = Person   //uname uage 属于别名
+        console.log(uname,uage,usex)
+    </script>
+</body>
+
+</html>

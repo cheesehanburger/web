@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    
+    <script>
+        //通过style属性只能获取和设置行内样式，在类样式中定义的通过style获取不到 
+
+        let box =document.querySelector('div')
+        // 通过style属性修改(会将属性写在行内)
+        box.style.backgroundColor = 'skyblue'
+        box.style.width = '400px'   //不要忘记添加单位
+        box.style.marginTop = '200px'
+    </script>
+</body>
+</html>

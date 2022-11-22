@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //删除数组元素
+        // pop（）方法，删除数组末尾元素,并返回该元素的值
+        let arr = ['red', 'green' ,'blue','pink','skyblue']
+        let data = arr.pop()
+        console.log(arr+'删除的元素是：'+data)
+
+        // （常用）shift()方法，删除数组开端的元素，并且返回该元素
+        data = arr.shift()
+        console.log(arr+'删除的元素是：'+data)
+
+        // splice()方法，删除指定的元素 splice(起始位置，删几个)
+        // 现在数组的元素有 green blue pink
+        // 目标：删除blue
+        arr.splice(1,1)    //从索引1开始删除1个元素
+        console.log(arr)
+    </script>
+</body>
+</html>

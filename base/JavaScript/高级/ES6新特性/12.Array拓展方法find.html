@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [
+            {
+                id: 1,
+                name: '张三'
+            }, {
+                id: 2,
+                name: '李四'
+            }
+        ]
+        //查找数组中id为2的对象
+        // find()用于找出第一个符合条件的数组成员并返回，如果没有找到返回undefined
+        // 区别:filter返回的是数组,some返回的是boolean
+        let target = arr.find((item,index)=>item.id == 2)
+        console.dir(target)
+    </script>
+</body>
+
+</html>

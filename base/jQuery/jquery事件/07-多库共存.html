@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            // jquery $()封装方法的近似原理
+            function $(ele) {
+                return document.querySelector(ele)
+            }
+            $('div')
+            // 多库共存:jQuery使用$作为标示符，随着jQuery的流行,其他 js 库也会用这$作为标识符， 这样一起使用会引起冲突
+            //          需要一个解决方案，让jQuery 和其他的js库不存在冲突，可以同时存在，这就叫做多库共存。
+
+            // 方法一:将$变为jQuery
+            jQuery.each()
+
+            // 方法二:jQuery 变量规定新的名称
+            let diy = jQuery.noConflict()
+            console.log(diy('span'))
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <span>2</span>
+</body>
+
+</html>

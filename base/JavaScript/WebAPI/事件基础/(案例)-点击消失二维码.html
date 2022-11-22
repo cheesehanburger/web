@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: top;
+            line-height: 16px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button>x</button><img src="./images/code.png" alt="">
+    <script>
+        let btn = document.querySelector('button')
+        let pic = document.querySelector('img')
+        btn.addEventListener('click', function() {
+            pic.style.display = 'none'
+        })
+    </script>
+</body>
+
+</html>

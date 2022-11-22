@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数中的属性和方法我们称之为成员
+        // 成员分为静态成员和实例成员
+        function People(uname,age) {
+            // 实例成员就是构造函数内部通过this添加的成员
+            this.uname = uname
+            this.age = age
+            this.sing = function() {
+                console.log('我会唱歌')
+            }
+        }
+        let han = new People('han',19)
+        // 实例成员只能通过实例化的对象调用
+        han.sing()
+
+
+        // 静态成员就是在构造函数本身上添加的成员
+        // 静态成员只能通过构造函数本身调用，对象是不能调用的
+        People.sex = '男'
+        console.log(People.sex)
+    
+    </script>
+</body>
+</html>

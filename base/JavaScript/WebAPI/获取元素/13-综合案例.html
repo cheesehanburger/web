@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 700px;
+            height: 320px;
+            border: 4px solid skyblue;
+        }
+
+        .content {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 50px;
+            width: 700px;
+            line-height: 50px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="" alt="">
+        <div class="content"></div>
+    </div>
+    <script>
+        //找到元素
+        let img = document.querySelector('.box img')
+        let content = document.querySelector('.box .content')
+        //照片信息
+        let data = [
+            {
+                imgSrc: 'images/b01.jpg',
+                title: '挑战云歌单，欢迎你来'
+            },
+            {
+                imgSrc: 'images/b02.jpg',
+                title: '田园日记，上演上京记'
+            },
+            {
+                imgSrc: 'images/b03.jpg',
+                title: '甜蜜攻势再次回归'
+            },
+            {
+                imgSrc: 'images/b04.jpg',
+                title: '我为歌狂，生为歌王'
+            },
+            {
+                imgSrc: 'images/b05.jpg',
+                title: '年度校园主题活动'
+            },
+            {
+                imgSrc: 'images/b06.jpg',
+                title: 'pink老师新歌发布，5月10号正式推出'
+            },
+            {
+                imgSrc: 'images/b07.jpg',
+                title: '动力火车来到西安'
+            },
+            {
+                imgSrc: 'images/b08.jpg',
+                title: '钢铁侠3，英雄镇东风'
+            },
+            {
+                imgSrc: 'images/b09.jpg',
+                title: '我用整颗心来等你'
+            },
+        ]
+        //记录张数
+        let sum = 0
+        //定时器
+        setInterval(function () {
+            img.src = data[sum].imgSrc
+            content.innerHTML = data[sum].title
+            sum++
+            if (sum === data.length) {
+                sum = 0
+            }
+            
+        }, 1000)
+    </script>
+</body>
+
+</html>

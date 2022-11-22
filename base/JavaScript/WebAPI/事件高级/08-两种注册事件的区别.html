@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button></button>
+    <script>
+        let btn = document.querySelector('button')
+        // 第一种注册事件
+        btn.onClick = function() {
+        }
+        // 注销
+        btn.onClick = null
+
+        // 第二种注册事件
+        btn.addEventListener('click',add)
+        function add() {
+        }
+        // 注销
+        // 注意：匿名函数不可以移除
+        btn.removeEventListener('click',add)
+    </script>
+</body>
+
+</html>

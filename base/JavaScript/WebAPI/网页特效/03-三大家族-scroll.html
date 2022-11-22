@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+    </div>
+    <script>
+        let div = document.querySelector('div')
+        // ------scroll家族--------
+        //1. 获取宽高 scrollWidth和scrollHeight得到的是（元素内容）的宽高，而不是元素本身
+        console.log(div.scrollWidth)
+        console.log(div.scrollHeight)
+        //2. 获取位置 scrollTop和scroLeft (可以修改)
+        // scrollTop:内容溢出盒子（元素）顶部的像素
+        // scroLeft:内容溢出盒子（元素）左侧的像素
+
+        // div.addEventListener('scroll', function() {
+        //     console.log(this.scrollTop)
+        // })
+
+    </script>
+</body>
+</html>

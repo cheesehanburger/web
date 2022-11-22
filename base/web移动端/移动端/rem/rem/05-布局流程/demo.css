@@ -1,0 +1,29 @@
+/* 移动适配 */
+/* 1. HTML标签加字号 1/10; 2. 写rem单位的尺寸 */
+/* @media (width: 320px) {
+    html {
+        font-size: 32px;
+    }
+}
+@media (width:375px) {
+    html {
+        font-size: 37.5px;
+    }
+}
+@media (width: 414px) {
+    html {
+        font-size: 41.4px;
+    }
+} */
+
+.box {
+    /*3.计算： rem = 实际尺寸px/根字号 */
+
+    /* 38*29 */
+    width: 1.813rem;
+    height: 0.773rem;
+    background-color: pink;
+}
+
+/* 弊端：这样的适配方法，局限性太大，每适配一个屏幕都需要新添html字号 */
+/* 于是有了更优的解决方案：flexiable.js */

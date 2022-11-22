@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义： let 变量名 = /表达式/
+        // reg里面存的是对象
+        let reg = /前端/
+        //检测是否匹配： regObj.test(被检测的字符)  返回boolean值  （重点）
+        let re = reg.test('我们都在学前端')
+        console.log(re)
+        //检索： regObj.exec(被检测的字符) 返回的是数组，没有则为null
+        let where = reg.exec('我们都在学前端')
+        console.log(where)
+
+    </script>
+</body>
+</html>

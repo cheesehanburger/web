@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 50px;
+            border: 1px solid pink;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>开始抽奖</div>
+    <button>开始抽取</button>
+    <script>
+        let arr = ['han','zhao','qian','sun','li','wang']
+        let div = document.querySelector('div')
+        let btn = document.querySelector('button')
+        btn.addEventListener('click',function() {
+            let random = Math.floor(Math.random()*arr.length)
+            div.innerHTML = arr[random]
+            arr.splice(random,1)
+            if(arr.length === 0) {
+                btn.disabled = true
+                btn.innerHTML = '已经抽完'
+            }
+        })
+    </script>
+</body>
+</html>

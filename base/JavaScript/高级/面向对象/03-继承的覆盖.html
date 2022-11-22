@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Father {
+            say() {
+                console.log('我是爸爸')
+            }
+        }
+        class Son extends Father {
+            say () {
+                super.say()
+                console.log('我是儿子')
+            }
+        }
+        let son  = new Son()
+        son.say()
+        // 子类有的方法会调用子类的，没有会查找父类是否有
+        // 可以通过super调用父类的方法
+    </script>
+</body>
+</html>

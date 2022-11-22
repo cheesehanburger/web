@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999
+        }
+        // 使用obj.defineProperty()定义新属性或修改原有的属性
+        // Object.defineProperty(obj, prop, descriptor)
+        // 其中descriptor以对象形式{}书写
+        // 四个特性
+        // value: 设置属性的值
+        // writable:是否可修改
+        // enumerable: 目标属性是否可以被枚举（属性是否可以被遍历）。 默认为 false
+        //  configurable: 目标属性是否可以被删除属性或是否可以再次修改特性（value,writable,enumerable,configurable）.  默认为false
+        Object.defineProperty(obj, 'num', {
+            value: 1000,
+            enumerable: true
+        })
+        Object.defineProperty(obj, 'price', {
+            value: 99
+        })
+        Object.defineProperty(obj, 'id', {
+            writable: false
+        })
+        obj.id = 2   //修改无效
+        Object.defineProperty(obj, 'address', {
+            value: 'nanjing',
+            enumerable: false,   //如果为false,则不可遍历出该属性
+            configurable: false  //如果为false,则不可删除该属性，且不可修改特性
+        })
+        // 因为有configurable: false，则这步操作是不允许的
+        Object.defineProperty(obj, 'address', {
+            value:'beijing'
+        })
+        // delete obj.address
+        console.dir(obj)
+
+    </script>
+</body>
+
+</html>

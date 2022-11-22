@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1366px;
+            height: 600px;
+            margin: 0 auto;
+            background: url('./images/bg.jpg');
+            /* 注意添加，否则平移后的图片仍然会显示 */
+            overflow: hidden;
+        }
+
+        /* 左右相同的样式 */
+        /* 本质是个大的精灵图 */
+        .box::before,
+        .box::after {
+            content: '';
+            float: left;
+            width: 50%;
+            height: 100%;
+
+            background-image: url(./images/fm.jpg);
+            transition: all 0.5s;
+        }
+        .box::after {
+            background-position: right, 0;
+            background-repeat: no-repeat;
+        }
+        /* 鼠标移入box，before往左移动，after往右移动 */
+        .box:hover::before {
+            transform: translateX(-100%);
+        }
+
+        .box:hover::after {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>

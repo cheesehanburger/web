@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.导入模板引擎 -->
+    <!-- window全局多一个函数，叫做template('模板id'，需要渲染的数据对象) -->
+    <script src="./lib/template-web.js"></script>
+</head>
+
+<body>
+
+    <div id="container"></div>
+    <!-- 3.定义模板 -->
+    <!-- 模板的html结构必须定义到script当中 -->
+
+    <!-- script有一个默认的type属性：text/javascript 表示所有的代码当作js执行,应该改成html-->
+    <script type="text/html" id="tpl-user">
+        <h1>{{name}}    ------    {{age}}</h1>
+
+        <!-- 原文输出 -->
+        {{@ test}}
+
+        <!-- 条件判断 -->
+        <div>
+          {{if flag === 0}}
+          flag的值是0
+          {{else if flag === 1}}
+          flag的值是1
+          {{/if}}
+        </div>
+
+        <!-- 遍历 -->
+        <ul>
+          {{each hobby}}
+          <li>索引是:{{$index}}，循环项是:{{$value}}</li>
+          {{/each}}
+        </ul>
+        <!-- 调用过滤器 -->
+        <h4>{{regTime | dataFormat}}</h4>
+    </script>
+
+    <script>
+        //定义过滤器
+        template.defaults.imports.dataFormat = function(data) {
+            let y = data.getFullYear()
+            let m = data.getMonth()
+            let d = data.getDate()
+            // 注意：必须要有return
+            return y + '-' + m + '-' + d
+        }
+
+
+        // 2.定义需要渲染的数据
+        let data = { name: 'zs', age: 20, test: '<h3>测试原文输出</h3>', flag: 1, hobby: ['hello', 'i', 'am'],regTime:new Date()}
+        // 4.调用template函数
+        let str = template('tpl-user', data)
+        console.log(str)
+        // 5.渲染数据
+        let con = document.querySelector('#container')
+        con.innerHTML = str
+    </script>
+</body>
+
+</html>

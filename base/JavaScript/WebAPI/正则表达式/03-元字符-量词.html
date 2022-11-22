@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 量词
+        // * 重复零次或多次  n >= 0
+        console.log(/a*/.test(''))
+        console.log(/a*/.test('a'))
+        console.log(/a*/.test('aa'))
+        console.log(/a*/.test('aaa'))
+        console.log(/a*/.test('b'))
+
+        console.log('--------------')
+        // + 重复一次或多次 n >= 1
+        console.log(/a+/.test(''))
+        console.log(/a+/.test('a'))
+        console.log(/a+/.test('aa'))
+        console.log(/a+/.test('aaa'))
+        console.log(/a+/.test('b'))
+
+        console.log('--------------')
+        // ? 出现 0 || 1
+        console.log(/^a?$/.test(''))
+        console.log(/^a?$/.test('a'))
+        console.log(/^a?$/.test('aa'))
+
+        console.log('--------------')
+        // {n} 只能重复n次    =n
+        console.log(/^a{6}$/.test('aa'))
+        console.log(/^a{6}$/.test('aaaaaa'))
+
+        console.log('--------------')
+        // {n,} 重复n次以上   >=n
+        console.log(/^a{6,}$/.test('aa'))
+        console.log(/^a{6,}$/.test('aaaaaa'))
+        console.log(/^a{6,}$/.test('aaaaaaa'))
+
+        console.log('--------------')
+        // {n,m} 重复n到m次   >= n  <= m
+        console.log(/^a{3,6}$/.test('aa'))
+        console.log(/^a{3,6}$/.test('aaa'))
+        console.log(/^a{3,6}$/.test('aaaaaa'))
+        console.log(/^a{3,6}$/.test('aaaaaaa'))
+
+
+    </script>
+</body>
+</html>

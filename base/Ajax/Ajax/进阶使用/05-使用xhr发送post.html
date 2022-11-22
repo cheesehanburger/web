@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 创建 xhr 对象
+        let xhr = new XMLHttpRequest()
+        // 2. 调用 open()
+        xhr.open('POST','http://www.liulongbin.top:3006/api/addbook')
+        // 3. 设置 Content-Type 属性（固定写法）
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+        // 4.调用send()，以查询字符串的新式提交数据
+        // 细节：get的请求数据在open里，post的请求数据在send里面
+        xhr.send('bookname=水浒传&author=施耐庵&publisher=上海图书馆')
+        // 5.监听事件
+        xhr.onreadystatechange = function () {
+            // 固定写法
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // 获取服务器响应的数据
+                console.log(xhr.responseText)
+            }
+        }
+    </script>
+</body>
+</html>

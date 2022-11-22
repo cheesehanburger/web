@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 继承性原则:若子代有自己的属性,将不会继承父类的属性 */
+        div {
+            /* 所以a标签不会继承color属性 */
+            color: red;
+            /* h系列不会继承font-size属性 */
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- 默认字体蓝色 -->
+        <a href="#">超链接</a>
+        <!-- 有默认字体的大小 -->
+        <h1>一级标题</h1>
+    </div>
+</body>
+</html>

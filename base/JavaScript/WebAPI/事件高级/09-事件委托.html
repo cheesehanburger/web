@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+    <script>
+        // 事件委托 target
+        // 给(父级)添加事件，将子级的注册事件委托给父级
+        // 原理:利用了事件冒泡
+        let ul = document.querySelector('ul')
+        ul.addEventListener('click', function(e) {
+            // 得到当前的元素
+            // 事件对象.target用来获得子元素
+            e.target.style.color = 'red'
+        })
+    </script>
+</body>
+</html>

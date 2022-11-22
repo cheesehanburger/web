@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+
+    <input type="file" name="" id="file">
+    <button id="upload">上传文件</button>
+
+    <!-- 进度条 -->
+    <div class="progress" style="width: 500px;">
+        <div class="progress-bar progress-bar-striped active" style="width: 0%" id="progressbar">
+            0%
+        </div>
+    </div>
+
+    <br>
+    <img src="" alt="" id="img" width="400">
+
+    <script>
+        let uploadbtn = document.querySelector('#upload')
+        uploadbtn.addEventListener('click', function () {
+            let files = document.querySelector('#file').files
+            if (files.length <= 0) {
+                alert('请选择需要上传的文件')
+            } else {
+                let fd = new FormData()
+                fd.append('file', files[0])
+                let xhr = new XMLHttpRequest()
+
+                // 绑定一个监听进度的事件
+                let progressbar = document.querySelector('#progressbar')
+                xhr.upload.addEventListener('progress', function (e) {
+                    // lengthComputable是一个boolean值，表示当前上传的资源是否具有可计算的长度
+                    if (e.lengthComputable) {
+                        // 计算进度
+                        // e.loaded 已传输的字节     e.total 总共要传输的字节
+                        let percent = Math.ceil((e.loaded / e.total) * 100)
+                        progressbar.style.width = percent + '%'
+                        progressbar.innerText = percent + '%'
+                    }
+                })
+                xhr.upload.addEventListener('load', function () {
+                    progressbar.className = 'progress-bar progress-bar-success'
+                })
+                
+                xhr.open('post', 'http://www.liulongbin.top:3006/api/upload/avatar')
+                xhr.send(fd)
+                xhr.onreadystatechange = function () {
+                    if (xhr.status === 200 && xhr.readyState === 4) {
+                        let obj = JSON.parse(xhr.responseText)
+                        console.log(obj)
+                        if (obj.status === 200) {
+                            let img = document.querySelector('#img')
+                            let url = 'http://www.liulongbin.top:3006' + obj.url
+                            img.src = url
+                        } else {
+                            console.log(obj.message)
+                        }
+
+                    }
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

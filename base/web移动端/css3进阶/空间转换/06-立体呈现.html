@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立体呈现</title>
+    <style>
+        /* transform-style: preserve-3d 添加给父元素,让父元素立体 */
+        .cube {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transition: all 2s;
+            /* 将子元素立体 */
+            transform-style: preserve-3d;
+        }
+        .cube div {
+            position:absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+        }
+        .front {
+            background-color: orange;
+            /* 前面向前挪动 */
+            transform: translateZ(200px);
+        }
+        .back {
+            background-color: green;
+        }
+
+        /* 旋转效果 */
+        .cube:hover {
+            transform: rotateY(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="front">前面</div>
+        <div class="back">后面</div>
+    </div>
+</body>
+</html>

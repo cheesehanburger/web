@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            overflow: auto;
+            padding: 10px;
+            border: 10px solid red;
+            margin: 100px 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+    </div>
+    <script>
+        let div = document.querySelector('div')
+        // ------offset家族--------
+        // 1 获取宽高 offsetWidth和offsetHeight得到的是元素本身的宽高,包含元素自身设置的宽高+padding+border
+        // 注意：若盒子是隐藏的，则获取的是0
+        console.log(div.offsetWidth)
+        console.log(div.offsetHeight)
+        // 2 获取位置   offsetLeft和offsetTop  (不可修改) 
+        // 获取元素距离自己(定位父级元素)的左、上距离
+        // 注意:  offsetLeft和offsetTop只读 
+        console.log(div.offsetTop)
+        console.log(div.offsetLeft)
+    </script>
+</body>
+</html>

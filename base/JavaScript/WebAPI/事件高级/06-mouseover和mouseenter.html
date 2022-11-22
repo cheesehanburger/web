@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // mouseover和mouseenter的区别
+        // mouseover/mouseout默认是事件冒泡执行
+        // mouseenter/mouseleave默认会阻止事件流动,好用一点
+        let father = document.querySelector('.father')
+        let son = document.querySelector('.son')
+        father.addEventListener('mouseenter', function() {
+            console.log('father')
+        })
+        son.addEventListener('mouseenter', function() {
+            console.log('son')
+        })
+        document.addEventListener('mouseenter',function(){
+            console.log('grand');
+        })
+    </script>
+</body>
+</html>

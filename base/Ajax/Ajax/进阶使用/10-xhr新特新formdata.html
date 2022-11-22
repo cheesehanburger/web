@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //FormData 对象，可以模拟表单操作
+        // 1 定义对象
+        let fd = new FormData()
+        // 2 添加表单项
+        fd.append('uname','han')
+        fd.append('password','123456')
+
+        let xhr = new XMLHttpRequest()
+        xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata')
+
+        xhr.send(fd)
+
+        xhr.onreadystatechange = function () {
+
+            if (xhr.readyState === 4 && xhr.status === 200) {
+
+                console.log(xhr.responseText)
+            }
+        }
+    </script>
+</body>
+
+</html>

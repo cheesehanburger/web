@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 回流（重排）： 当 Render Tree 中部分或者全部元素的尺寸、结构、布局等发生改变时，浏览器就会重新渲染部分或全部文档的过程称为 回流。
+        // 重绘 ：由于节点(元素)的样式的改变并不影响它在文档流中的位置和文档布局时(比如：color、background-color、outline等), 称为重绘。
+        // 有回流一定会重绘
+        let s = document.body.style
+        s.padding = '2px'      //重排+重绘
+        s.border = '1px solid red' //重排+重绘
+        s.color = 'red'            //重绘
+        s.backgroundColor='pink'   //重绘
+        s.fontSize = '16px'        //重排+重绘
+    </script>
+</body>
+</html>

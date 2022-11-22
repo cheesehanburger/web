@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./lib/bootstrap.css">
+  <script src="./lib/jquery.js"></script>
+</head>
+
+<body style="padding: 15px;">
+  <!-- 添加图书的额panel面板 -->
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">添加新图书</h3>
+    </div>
+    <div class="panel-body form-inline">
+
+      <div class="input-group">
+        <div class="input-group-addon">书名</div>
+        <input type="text" class="form-control" id="ipBookname" placeholder="请输入书名">
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-addon">作者</div>
+        <input type="text" class="form-control" id="ipAuthor" placeholder="请输入作者">
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-addon">出版社</div>
+        <input type="text" class="form-control" id="ipPublicer" placeholder="请输入出版社">
+      </div>
+
+      <button id="Add" class="btn btn-primary">添加</button>
+    </div>
+  </div>
+
+  <!-- 图书表格 -->
+
+  <table class="table table-bordered table-hover" id="bookstore">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>书名</th>
+        <th>作者</th>
+        <th>出版社</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <script>
+    $(function () {
+      // 得到数据并渲染
+      getBooklist()
+      // 获取图书列表的数据
+      function getBooklist() {
+        // 1.发起ajax请求获取图书列表数据
+        $.get('http://www.liulongbin.top:3006/api/getbooks', function (res) {
+          console.log(res)
+          // 2.判断数据是否获取成功
+          if (res.status === 500) {
+            alert('数据请求失败')
+          } else {
+            let arr = []
+            // 3.将数据渲染到列表
+            $.each(res.data, function (index, item) {
+              arr.push(`
+              <tr>
+                <td>${item.id}</td>
+                <td>${item.bookname}</td>
+                <td>${item.author}</td>
+                <td>${item.publisher}</td>
+                <td><a href="#" class="del" data-id="${item.id}">删除</a></td>
+              </tr>
+              `)
+            })
+            //数组的jion()方法可以把数组内所有的元素转化为一个字符串
+            $('#bookstore tbody').append(arr.join(''))
+          }
+        })
+      }
+
+      // 删除元素 通过代理实现动态绑定
+      $('#bookstore tbody').on('click', '.del', function () {
+        let id = $(this).attr('data-id')
+        $.get('http://www.liulongbin.top:3006/api/delbook', { id: id }, function (res) {
+          if (res.status !== 200) {
+            alert('删除失败')
+          } else {
+            getBooklist()
+          }
+        })
+      })
+      // 添加元素
+      $('#Add').on('click', function () {
+        let bookname = $('#ipBookname').val().trim()
+        let author = $('#ipAuthor').val().trim()
+        let publisher = $('#ipPublicer').val().trim()
+        if (bookname.length <= 0 || author.length <= 0 || publisher.length <= 0)
+          return alert('请填写完整的信息')
+        $.post('http://www.liulongbin.top:3006/api/addbook', {
+          bookname: bookname,
+          author: author,
+          publisher: publisher
+        }, function (res) {
+          if (res.status === 500) {
+            alert('添加失败')
+          } else {
+            getBooklist()
+          }
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>

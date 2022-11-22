@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明数组
+        let arr = [2,6,1,7,4]
+        let sum = 0
+        // 数组求和
+        for (let i = 0; i < arr.length; i++) {
+            sum  += arr[i]
+        }
+        ave = sum / arr.length
+        document.write(`数组的和为${sum},平均值为${ave}`)
+
+        // 数组求最大值
+        let max = 0
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= max) {
+                max = arr[i]
+            }
+        }
+        document.write(`其中最大值为${max}`)
+    </script>
+</body>
+</html>

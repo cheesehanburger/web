@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 操作样式之css方法
+        $(function () {
+            // 如果css只写了属性名，则会返回属性值
+            let value = $('div').css('width')
+            console.log(value)
+            // （属性名，属性值）
+            // 属性必须加引号，值如果是数字可以不加引号和单位
+            $('div').css('width', 400)
+            // 可以通过对象设置多个属性
+            // 属性也可以不用加引号
+            $('div').css({
+                backgroundColor: 'skyblue',
+                height: 400
+            })
+        })
+    </script>
+</body>
+
+</html>

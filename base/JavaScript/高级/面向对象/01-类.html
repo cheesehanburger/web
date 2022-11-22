@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class People {
+            // 创建类
+            constructor(uname) {
+                this.name = uname
+            }
+            // 类中的函数不需要使用function
+            sing() {
+                console.log("i am sing")
+            }
+        }
+        
+        let han  = new People('han')
+        console.log(han.name)
+        han.sing()
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // 冒泡事件
+        // 所谓冒泡事件就是,如果子级和父辈级有(同种事件),那么会从子级到父级冒泡执行
+        // 事件冒泡是默认存在的
+        let father = document.querySelector('.father')
+        let son = document.querySelector('.son')
+        father.addEventListener('click', function() {
+            alert('我是父级')
+        })
+        son.addEventListener('click', function() {
+            alert('我是子级')
+        })
+    </script>
+</body>
+</html>

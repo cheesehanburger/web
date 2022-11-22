@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        span {
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div>粉红色</div>
+    <span>天蓝色</span>
+    <script>
+        // 1 获取元素
+        let div = document.querySelector('div')
+        let span = document.querySelector('span')
+        
+        //2 修改元素内容
+        //方法一 document.write()方法
+        document.write('hello world')   //只能进行追加，不能添加到指定的位置
+        //方法二 innerText属性
+        div.innerText = '<strong>现在我修改了文字</strong>'   //innerText并不会解析标签
+        //方法三 innerHtml属性
+        span.innerHTML = '<strong>文字的标签会被相应</strong>' //innerHtml会解析标签
+
+    </script>
+</body>
+</html>

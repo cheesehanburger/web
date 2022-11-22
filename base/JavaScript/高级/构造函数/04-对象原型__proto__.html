@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 所有的对象都有__proto__
+        function People(uname,age) {
+            this.uname = uname
+            this.age = age
+            this.sing = function() {
+                console.log('我会唱歌')
+            }
+        }
+
+        People.prototype.run = function() {
+            console.log('我会跑')
+        }
+
+        let han = new People('han',18)
+        console.log(han)
+        // 对象为啥可以使用prototype原型对象的属性和方法，对象都会有一个属性 __proto__ 指向构造函数的 prototype 原型对象
+        han.run()
+        // __proto__和原型对象prototype是等价的
+        console.log(han.__proto__===People.prototype)
+
+        // 方法的查找规则：首先看对象身上是否有调用的方法，有则执行该方法
+        // 如果没有这个方法,因为__proto__的存在,就去构造函数原型对象prototype身上查找
+    </script>
+</body>
+</html>

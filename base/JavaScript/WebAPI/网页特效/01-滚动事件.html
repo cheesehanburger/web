@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+        div {
+            height: 200px;
+            width: 200px;
+            background-color:pink;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        放很多文字放很多文字放很多文字放很多文字
+        放很多文字放很多文字放很多文字放很多文字
+        放很多文字放很多文字放很多文字放很多文字
+        放很多文字放很多文字放很多文字放很多文字
+        放很多文字放很多文字放很多文字放很多文字
+        放很多文字放很多文字放很多文字放很多文字
+    </div>
+    <script>
+        // 滚动事件 scroll
+        // 添加对象: window，document
+        // 目的: 很多网页需要检测用户把页面滚动到某个区域后做一些处理， 比如固定导航栏，比如返回顶部
+        // 常用:监听整个页面的滚动 : window.addEventListener()
+        let div = document.querySelector('div')
+        // 也可以检测某个元素的滚动事件
+        div.addEventListener('scroll', function() {
+            console.log('滚动成功')
+        })
+    </script>
+</body>
+</html>

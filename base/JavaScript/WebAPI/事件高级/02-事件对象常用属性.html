@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // mousemove
+        // 事件对象常见属性
+        // type   获取当前事件类型
+        // clienX/clienY  获取光标相对于浏览器(可见)窗口左上角的位置
+        // pageX/pageY   跟文档坐标有关系
+        // offsetX/offsetY   获取光标相对于当前DOM元素左上角的位置
+        // key  获取按下键盘的键值 （keycode已经废弃）
+        document.addEventListener('mousemove', function(e) {
+            console.log('client:'+e.clientX,e.clientY)
+        })
+        document.addEventListener('mousemove', function(e) {
+            console.log('page:'+e.pageX,e.pageY)
+        })
+        document.addEventListener('mousemove', function(e) {
+            console.log('offset:'+e.offsetX,e.offsetY)
+        })
+    </script>
+</body>
+</html>

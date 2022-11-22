@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 箭头函数是用来简化函数定义语法的
+        // lambda表达式
+        const fn = () => {
+            console.log('这是一个箭头函数')
+        }
+        // 1.如果函数体中只有一行代码,并且执行的结果就是函数的返回值 那么{}可以省略
+        const sum = (n1, n2) => n1 + n2
+        // 2.如果形参只有一个,()可以省略
+        const fun = v => alert(v)
+        fun(2)
+    </script>
+</body>
+
+</html>

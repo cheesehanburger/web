@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 浅拷贝:浅拷贝只是拷贝一层, 更深层次对象级别的只拷贝引用.
+
+        let obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age:18
+            }
+        }
+        let o = {}
+        // for (let k in obj) {
+        //     o[k] = obj[k]
+        // }
+        // 浅拷贝语法糖
+        Object.assign(o,obj)
+        o.msg.age = 20
+        o.id = 2
+        o.name = 'han'
+        //复杂数据类型本质上还是用的同一块数据,篡改会互相影响
+        console.log(o)
+        console.log(obj)
+    </script>
+</body>
+</html>

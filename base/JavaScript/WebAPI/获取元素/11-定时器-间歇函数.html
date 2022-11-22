@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //开启定时器
+        //setInterval(函数，间隔时间)  每隔一段时间调用函数，单位是毫秒
+        //方式一
+        setInterval(function(){console.log('开始打印')},1000)
+        //方式二
+        function show() {
+            console.log('赚很多钱')
+        }
+        //setInterval() 返回的是一个序号
+        let Overtime = setInterval(show,1000)   //注意，函数不需要加括号
+
+        //关闭定时器
+        //clearInterval(变量名)
+        clearInterval(Overtime)
+    </script>
+</body>
+</html>

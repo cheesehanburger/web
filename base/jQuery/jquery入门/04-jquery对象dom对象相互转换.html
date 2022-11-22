@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <video src="mov.mp4" muted></video>
+    <script>
+        // jquery对象
+        $('video')
+        // dom对象
+        let myvideo = document.querySelector('video')
+        // 1.dom对象转化为jquery对象
+        $(myvideo)
+        // 2.jquery对象转化为dom对象(两种方法)
+        $('video')[0]
+        $('video').get[0]
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var age = 30
+        var obj = {
+            age: 20,
+            // 实际上是定义在全局作用域下
+            say: () => { console.log(this.age)}
+        }
+        obj.say()  //此时输出的是30,因为对象中并不能产生作用域
+    </script>
+</body>
+</html>

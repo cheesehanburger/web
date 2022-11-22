@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function People(uname, age) {
+            this.uname = uname
+            this.age = age
+        }
+        // People.prototype.run = function () {
+        //     console.log('我会跑')
+        // }
+        // 很多情况下,我们需要construtor属性指回原来的构造函数
+        // 比如:原型对象采取了对象形式的赋值,这样会覆盖原来的内容,包括constructor
+        // 这时候需要重新添加一个constructor属性
+        People.prototype = {
+            // 手动添加,指回原来的构造函数
+            constructor: People,
+            run: function() { console.log('我会跑') },
+            sing: function() { console.log('我会唱歌') }
+        }
+        
+
+        let han = new People('han',21)
+        let lu = new People('lu',21)
+        // 对象原型__proto__和原型对象prototype中都具有一个constructor,指回构造函数本身
+        console.log(People.prototype.constructor)
+        console.log(han.__proto__.constructor)
+
+        
+
+    </script>
+</body>
+
+</html>

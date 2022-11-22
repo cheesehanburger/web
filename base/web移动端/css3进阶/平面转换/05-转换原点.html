@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转换原点</title>
+    <style>
+        /* 在标签本身写转换原点 */
+        img {
+            width: 250px;
+            border: 1px solid #000;
+            transition: all 2s;
+            /* 默认的转换原点是中心点 */
+            /* 可以通过 transfrom-origin更改旋转原点 */
+            /* transfrom-origin:原点水平位置 原点垂直位置 */
+
+            /* 常用方位词right left center top bottom */
+            transform-origin: right bottom;
+
+            /* 也可以用像素值，以左上角为原点 */
+            transform-origin: 50px 50px;
+        }
+        
+        img:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/rotate.png" alt="">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            // let targetObj = {}
+            // let obj = {
+            //     id: 1,
+            //     name: 'han'
+            // }
+            // $.extend(targetObj,obj)
+            // console.log(targetObj)
+            let targetObj = {
+                id: 2
+            }
+            let obj = {
+                id: 1,
+                name: 'han',
+                msg: {
+                    age: 18
+                }
+            }
+            // 对象拷贝会覆盖原数据
+            // 浅拷贝元素
+            $.extend(targetObj, obj)
+            // 深拷贝元素
+            $.extend(true,targetObj, obj)
+            console.log(targetObj)
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

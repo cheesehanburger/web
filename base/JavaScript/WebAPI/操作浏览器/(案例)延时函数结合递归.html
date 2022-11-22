@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="clock"></div>
+    <script>
+        //使用递归函数使得延时函数实现间歇函数的效果
+        let clock = document.querySelector('.clock')
+        function start() {
+            let date = new Date()
+            clock.innerHTML = date.toLocaleString()
+            setTimeout(start, 1000)
+        }
+        start()
+    </script>
+</body>
+</html>

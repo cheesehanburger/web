@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            font-size: 24px;
+        }
+        /* 交集：紧挨着 */
+        /*交集选择器是选中满足多个选择器的标签*/
+        div.box {
+            color: red;
+        }
+        div .box {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"> 满足div和box
+        <p class="box">满足div的后代box</p>
+    </div>
+</body>
+</html>

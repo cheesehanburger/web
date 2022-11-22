@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // js查找机制:按照原型链一层一层往上找
+        function People(uname,age) {
+            this.uname = uname
+            this.age = age
+        }
+        People.prototype.sing = function() {
+            console.log('我会唱歌')
+        }
+        // People.prototype.sex = '男'
+        Object.prototype.sex = '女'
+        let han = new People('han',23)
+        han.sex = '男'
+        console.log(han.sex)
+
+    </script>
+</body>
+</html>

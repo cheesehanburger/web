@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: purple;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        $(function () {
+            // 1. 单个事件注册
+            // $("div").click(function() {
+            //     $(this).css("background", "purple");
+            // });
+            // $("div").mouseenter(function() {
+            //     $(this).css("background", "skyblue");
+            // });
+
+            // 2. 事件处理on
+            // (1) on可以绑定1个或者多个事件处理程序
+            //  绑定多个事件，多个处理多个程序
+            // $('div').on({
+            //     mouseover: function () {
+            //         $(this).css('backgroundColor', 'skyblue')
+            //     },
+            //     click: function () {
+            //         $(this).css('backgroundColor', 'purple')
+            //     }
+            // })
+            // 绑定多个事件，处理相同的程序
+            $('div').on('mouseover mouseleave', function () {
+                $(this).toggleClass('current')
+            })
+
+            // （2）可以事件委派操作 (绑定在父级，触发在子级)
+            $('ul').on('click', 'li', function () {
+                alert(11)
+            })
+            // （3）动态创建的元素，click() 没有办法绑定事件， on() 可以给未来动态生成的元素绑定事件 
+            //  但是必须通过事件委派
+            //先绑定事件
+            $('ol').on('click','li',function() {
+                alert(11)
+            })
+            // 再创建元素
+            let li  = $('<li>后来创建的li</li>')
+            $('ol').append(li)
+        })
+    </script>
+</body>
+
+</html>

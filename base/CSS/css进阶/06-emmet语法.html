@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* 一般来说emmet快捷语法只需要写首字母就能完成填充 */
+            /* fw */
+            font-weight: normal;
+            /* fsz */
+            font-size: 16px;
+            /* bgc */
+            background-color: red;
+            /* lh */
+            line-height: 24px;
+            /* w300+h400+bgc */
+            width: 300px;
+            height: 400px;
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 常用emmet语法 -->
+
+    <!-- .red  -->
+    <div class="red"></div>
+
+    <!-- #one -->
+    <div id="one"></div>
+
+    <!-- p.red#one -->
+    <p class="red" id="one"></p>
+
+    <!-- ul>li -->
+    <ul>
+        <li></li>
+    </ul>
+
+    <!-- ul>li{我是li的内容} -->
+    <ul>
+        <li>我是li的内容</li>
+    </ul>
+
+    <!-- ul>li*3 -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- ul>li{里面有字}*3 -->
+    <ul>
+        <li>里面有字</li>
+        <li>里面有字</li>
+        <li>里面有字</li>
+    </ul>
+
+    <!-- ul>li{里面有数字递增$}*3 -->
+    <ul>
+        <li>里面数字递增1</li>
+        <li>里面数字递增2</li>
+        <li>里面数字递增3</li>
+    </ul>
+</body>
+</html>

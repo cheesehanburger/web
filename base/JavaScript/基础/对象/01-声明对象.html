@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明对象
+        let person = {
+            // 每个属性需要（逗号）分隔
+            // 属性名: 值
+            name: 'han' ,
+            age: 18 ,
+            sex: '男' ,
+            // 方法  方法名:function(){}
+            sayHi: function() {
+                console.log('hi~~~')
+            }
+        }
+        console.dir(person)
+
+        // 访问属性    
+        //方法一  对象.属性名
+        console.log(person.name)
+        //方法二  对象['属性名']
+        console.log(person['age'])
+
+        // 访问方法  对象.方法名()
+        person.sayHi()
+    </script>
+</body>
+</html>

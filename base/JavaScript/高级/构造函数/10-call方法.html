@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(x,y) {
+            console.log('我想喝手磨咖啡')
+            console.log(this)
+            console.log(x + y)
+        }
+        let  obj = {
+            name: 'han'
+        }  
+        // call方法的作用
+        // 1 call可以调用当前函数
+        // fn.call()
+        // 2 call可以改变函数内部this的指向
+        // fn.call(obj)
+        fn.call(obj,1,2)   //第一个参数是改变this指向,不参与参数传递
+    </script>
+</body>
+</html>

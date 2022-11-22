@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function() {
+            let arr = ['red','blue','green']
+            let sum = 0
+            // 隐式迭代只能做相同的操作
+            // 如果需要对元素做不同的操作，就需要each方法了
+
+            // 方法一
+            //$("div").each(function (index, domEle) {  })
+            // 主要用于jQuery对象
+            //index 是每个元素的索引号;  domEle 是每个DOM元素对象
+            $('div').each(function(index,domEle) {
+                // 第一个参数一定是索引号 
+                console.log(index)
+                // 第二个参数一定是DOM对象
+                console.log(domEle)
+                // 将dom对象转化为jquery对象使用
+                $(domEle).css('color',arr[index])
+                sum += parseInt($(domEle).text())
+                console.log(sum)
+            })
+
+            // 方法二
+            //$.each
+            $.each($('div'),function(index,ele) {
+                console.log(index)
+                console.log(ele)
+            })
+            // $.each()方法可用于遍历任何对象。主要用于数据处理，比如数组，对象都可以遍历
+            $.each(arr,function(index,ele) {
+                console.log(index)
+                console.log(ele)
+            })
+            $.each({
+                name: 'han',
+                age: 18
+            },function(index,ele) {
+                console.log(index)
+                console.log(ele)
+            })
+        })
+    </script>
+</body>
+
+</html>

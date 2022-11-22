@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- from属性 -->
+    <!-- action : url地址 若无指定则提交到本页面 -->
+    <!-- target : 指定打开url的页面  _blank表示新窗口打开  _self表示当前页面打开(默认) -->
+    <!-- method ：规定以何种方式把表单数据提交到url  get会将提交的数据显示在url地址中，适合提交少量的数据（默认） post则更加安全，适合提交复杂的数据 -->
+    <!-- enctype ： 规定在发送表单数据之前如何对数据进行编码，默认值为application/x-www-form-urlencoded 涉及到文件上传时候必须为multipart/form-data-->
+    <form  action="/login" target="_blank" method="get">
+        <input type="text" name="email_or_mobile">
+
+        <input type="password" name="password">
+
+        <input type="checkbox" name="remember_me" id="">
+
+        <button type="submit">提交</button>
+    </form>
+</body>
+
+</html>

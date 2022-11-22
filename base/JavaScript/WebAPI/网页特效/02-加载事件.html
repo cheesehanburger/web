@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 老代码喜欢把scrit放在这里
+        // 因为浏览器加载顺序的原因,很有可能读取不到DOM元素
+        // 那么就使用加载事件,等待页面加载完毕之后再开始执行
+
+        // load给window加
+        // 需要整个页面加载完成
+        window.addEventListener('load', function() {
+            let div = document.querySelector('div')
+            console.log(div)
+        })
+        // DOMContentLoaded
+        // 无需等待样式表,图像等完全加载
+        document.addEventListener('DOMContentLoaded',function() {
+            let div = document.querySelector('div')
+            console.log(div)
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

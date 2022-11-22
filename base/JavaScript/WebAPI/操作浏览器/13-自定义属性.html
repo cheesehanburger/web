@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 通过data-自定义属性（推荐使用） -->
+    <div class="box" data-index="0" data-name="defind"></div>
+    <script>
+        let box = document.querySelector('.box')
+        // 1:通过对应方法添加自定义属性（不推荐使用，规范性太差）
+        // 设置自定义属性
+        box.setAttribute('myId', 10)
+        // 获得自定义属性
+        console.log(box.getAttribute('myId'))
+        // 删除自定义属性
+        box.removeAttribute('myId')
+
+        // 2：通过data-自定义属性（推荐使用）
+        // 在css中自定义
+        // 获取方式 元素.dataset.自定义属性名
+        console.log(box.dataset.index)
+    </script>
+</body>
+</html>

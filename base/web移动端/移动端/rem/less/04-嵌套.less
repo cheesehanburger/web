@@ -1,0 +1,11 @@
+// less通过嵌套会自动生成后代选择器
+.father {
+    color: pink;
+    .son {
+        width: 100px;
+        // 通过&符号，可以生成当前选择器的（伪元素）
+        &:hover {
+            color: green;
+        }
+    }
+}

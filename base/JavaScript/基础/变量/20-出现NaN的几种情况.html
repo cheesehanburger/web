@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //出现NaN的几种情况
+
+        // 将非数值型的String通过Number方法转化为数字
+        console.log(Number('123bb'))
+
+        // undefind 和非 String类型的数据相加
+        console.log(undefined + 10)
+        console.log(undefined + undefined)
+        console.log(undefined + null)
+        console.log(undefined + true)
+        console.log(undefined + 'true')  //和string相加除外
+
+    </script>
+</body>
+</html>

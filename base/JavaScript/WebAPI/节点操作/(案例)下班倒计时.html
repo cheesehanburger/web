@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      /* background-size: 240px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next">今天是2021年8月28日</p>
+    <p class="title">下班倒计时</p>
+    <p class="clock">
+      <span id="hour">00</span>
+      <i>:</i>
+      <span id="minutes">25</span>
+      <i>:</i>
+      <span id="scond">20</span>
+    </p>
+    <p class="tips">
+      现在是18:30:00
+    </p>
+  </div>
+  <script>
+
+    let next = document.querySelector('.next')
+    let tips = document.querySelector('.tips')
+    
+    // 获取时间
+    // 加这一步防止页面刷新闪烁问题
+    timmer()
+    setInterval(timmer, 1000)
+    function timmer() {
+      let date = new Date()
+      next.innerHTML = `今天是${date.getFullYear()}年${date.getMonth()}月${date.getDate()}日`
+      tips.innerHTML = `现在是${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    }
+
+    // 获取时间戳而计算倒计时
+    let hour = document.querySelector('#hour')
+    let min = document.querySelector('#minutes')
+    let second = document.querySelector('#scond')
+    
+    overTime()
+    setInterval(overTime, 1000)
+    function overTime() {
+      let next = +new Date('2022-10-21 23:00:00')   //指定时间戳
+      let now = +new Date()     //现在时间戳
+      let reduce = (next - now) / 1000   //获取时间差(秒数)
+      h = parseInt(reduce / 60 / 60 % 24) // 计算小时
+      m = parseInt(reduce / 60 % 60); // 计算分数
+      s = parseInt(reduce % 60); // 计算当前秒数
+      console.log(h,m,s)
+      hour.innerHTML = h > 9 ? h : '0' + h
+      min.innerHTML = m > 9 ? m : '0' + m
+      second.innerHTML = s > 9 ? s : '0' + s
+    }
+  </script>
+</body>
+
+</html>

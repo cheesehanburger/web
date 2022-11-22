@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侧轴对齐方式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 侧轴的居中效果,给父级添加align-items,给子级添加align-self*/
+        .box {
+            display: flex;
+            /*盒子垂直居中效果*/
+            align-items: center;
+
+            /*默认的效果*/
+            /* 如果子级没有高度,则会拉伸至父级 */
+            /* align-items: stretch; */
+
+            height: 300px;
+            margin: auto;
+            border: 1px solid #000;
+        }
+        
+        .box div {
+            /* 子级若不给宽则是内容的宽度 */
+            /* width: 100px; */
+            height: 100px;
+            background-color: pink;
+        }
+
+        /*align-self添加给子级*/
+        .box div:nth-child(2) {
+            align-self: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>1111111111</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+
+</html>

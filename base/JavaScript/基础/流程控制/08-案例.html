@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    a {
+      width: 200px;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    let account = 100;
+    let add;
+    let off;
+    let ctrl;
+    while (true) {
+      ctrl = prompt(
+        `请选择你的操作：\n 1.存款 \n 2.取款 \n 3.查看余额\n 4.退出\n`
+      );
+      if (ctrl === "退出") {
+        break;
+      }
+      switch (ctrl) {
+        case "存款":
+          add = +prompt("输入存入的金额");
+          account = account + add;
+          alert(`您的余额为：${account}`);
+          break;
+        case "取款":
+          off = +prompt("输入取出的金额");
+          account = account - off;
+          alert(`您的余额为：${account}`);
+          break;
+        case "查看余额":
+          alert(`您的余额为：${account}`);
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

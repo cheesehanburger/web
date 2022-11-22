@@ -1,0 +1,260 @@
+/* 通栏 */
+.xtx_body {
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+
+.xtx_body .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 侧边栏 */
+.xtx_body .side {
+    width: 227px;
+    background-color: #fff;
+}
+
+.xtx_body .side .touxiang {
+    display: flex;
+    flex-direction: column;
+    height: 231px;
+    align-items: center;
+    border-bottom: 1px solid #f4f4f4;
+}
+.xtx_body .side .touxiang div:nth-child(1) {
+    margin-top: 47px;
+    height: 85px;
+    width: 85px;
+}
+
+.xtx_body .side .touxiang div:nth-child(2) {
+    margin-top: 7px;
+    font-size: 18px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.xtx_body .side .touxiang div:nth-child(3) {
+    width: 93px;
+	height: 26px;
+	background-image: linear-gradient(264deg, 
+		#e05e2f 0%, 
+		#ea745e 95%);
+	border-radius: 13px;
+    margin-top: 10px;
+    line-height: 26px;
+    text-align: center;
+    color: #f9f9f9;
+}
+
+/* 公共样式 */
+.xtx_body .side .comment {
+    border-bottom: 1px solid #f4f4f4;
+    padding: 34px 0 10px 54px;
+}
+.xtx_body .side .comment h3 {
+    font-size: 18px;
+    color: #333333;
+}
+
+.xtx_body .side .comment li {
+    height: 40px;
+    line-height: 40px;
+}
+
+.xtx_body .side .comment ul {
+    margin-top: 10px;
+}
+.xtx_body .side .comment li a {
+    display: block;
+    font-size: 14px;
+    color: #666666;
+}
+.xtx_body .side .comment li:hover a {
+    color:#5cb99e
+}
+
+
+
+
+
+/* 主体内容 */
+.xtx_body .content {
+    display: flex;
+    width: 999px;
+    flex-direction: column;
+}
+
+/* 用户账户 */
+.xtx_body .content .overview {
+    display: flex;
+    height: 100%;
+    height: 132px;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.xtx_body .overview .left,
+.xtx_body .overview .right {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.xtx_body .overview .left {
+    border-right: 1px solid #f4f4f4;
+}
+
+.xtx_body .overview a img {
+    height: 23px;
+    margin-bottom: 10px;
+}
+
+.xtx_body .overview p {
+    font-size: 16px;
+    color: #333333;
+}
+
+.xtx_body .overview .right span {
+    font-size: 25px;
+    color: #e05e30;
+}
+
+/* 公共样式 */
+.pannel {
+    margin-top: 18px;
+    padding: 28px 17px 28px 19px;
+    background-color: #fff;
+}
+
+.pannel .pannel_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.pannel .pannel_title h2 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.pannel .pannel_title a {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #999999;
+}
+
+/* 我的订单 */
+.orders .order_body li {
+    display: flex;
+    height: 137px;
+    border: 1px solid #f4f4f4;
+    margin-bottom: 20px;
+}
+
+.orders .order_body li:last-child {
+    margin-bottom: 0;
+}
+
+.orders .order_body .goods {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.orders .order_body .goods .pic {
+    height: 107px;
+    width: 107px;
+}
+
+/* 自动省略号的问题 */
+.orders .order_body .goods .txt {
+    /* width: 213px; */
+    flex: 1;
+    /* 为了溢出的时候显示省略号 */
+    /* 因为弹性盒子的尺寸会被内容撑开 */
+    /* 效果与给盒子加宽类似 */
+    width: 0;
+}
+
+.orders .order_body .goods .txt h5 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+
+    /* 超行字体自动省略 */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.orders .order_body .goods .txt p {
+    font-size: 14px;
+    color: #999999;
+}
+
+
+.orders .order_body .status {
+    width: 120px;
+    padding-top: 55px;
+}
+
+.orders .order_body .status span {
+
+    height: 14px;
+    color: #e05e30;
+}
+
+.orders .order_body .status a {
+    color: #999999;
+}
+
+
+.orders .order_body .pay {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    text-align: center;
+    font-size: 14px;
+    color: #333333;
+}
+
+.orders .order_body .pay p:first-child {
+    color: #9a2e1f;
+}
+
+.orders .order_body .action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.orders .order_body .action a {
+    font-size: 14px;
+}
+
+.orders .order_body .action .btn {
+    width: 100px;
+    height: 30px;
+    background-color: #5eb69c;
+    border-radius: 2px;
+    margin-bottom: 13px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+
+}

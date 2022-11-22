@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uname: '小明',
+            age: 18,
+            sno: 20110011
+        }
+        // 使用 for in 循环语句来遍历对象
+        for (let elem in obj) {
+            console.log(elem)     //   得到属性名字(String类型)
+            console.log(obj[elem])   // 得到属性值
+
+            // 为什么这么写？   elem === 'uname'  elem === 'age'
+        }
+    </script>
+</body>
+
+</html>

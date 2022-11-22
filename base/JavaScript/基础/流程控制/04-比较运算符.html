@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 所有比较运算符的结果都是boolean值
+        // 常见：> < >= <= ==
+        // == 只会比较值，不会比较数据类型
+        console.log(5 == '5')  //true
+        console.log(5 == 'han')  //false
+        // 特别 === (开发常用的判断)  要求值和类型都需要相等
+        console.log(5 ==='5') //false
+        // 相反的 !==
+
+        // 特殊情况
+        // 字符串比较的是对应的acsll码
+        console.log('han' > 'kai')
+
+        // NaN不等于任何一个数据类型，包括自己
+        console.log (NaN === NaN)  //false
+
+        // 不要比较小数，因为精度的问题
+        console.log(0.2 + 0.3 === 0.5) //false
+
+        // 比较运算符会进行类型转换
+        console.log(3 > '2')  //true  会将字符串转换成转换成数字进行比较
+
+    </script>
+</body>
+</html>

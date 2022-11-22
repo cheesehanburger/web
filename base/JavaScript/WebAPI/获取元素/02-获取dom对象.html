@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>我是一个盒子</div>
+    <div>我是二个盒子</div>
+    <div class="three">我是三个盒子</div>
+    <div id="nav"> nav </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        //方法1 根据css选择器来获取dom元素（重点）
+
+        // 获取一个元素---对象
+        //document.querySelector('css选择器')   参数是string类型
+        let box = document.querySelector('div')  //获取div盒子（只能得到一个盒子，且只能是第一个）对象
+        let threeBox = document.querySelector('.three') //获取第三个盒子（通过类选择器）
+        // 获取第三个li
+        let li = document.querySelector('ul li:last-child')
+
+        // 获取多个元素---伪数组
+        // document.querySelectorAll ('css选择器')
+        let list = document.querySelectorAll('ul li')
+        console.log(list)  //获取所有li对象的数组，但是一个伪数组，没有pop push等方法
+
+        // 注意：querySelector方法能直接修改，但是querySelectorAll不能，因为他返回的是一个数组，需要进行遍历
+        for(let i = 0; i < list.length; i++) {
+            console.log(list[i])
+        }
+
+
+        // 其他获取dom元素的方法（了解）
+        // 根据id获得一个元素
+        document.getElementById('nav')
+        //根据标签获取一类元素  获取页面所有div
+        document.getElementsByTagName('div')
+        //根据类名获取元素 获取页面所有类名为 three的元素
+        document.getElementsByClassName('three')
+    </script>
+</body>
+</html>

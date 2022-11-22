@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主轴对齐方式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 主轴的居中效果,给父级添加 */
+        .box {
+            display: flex;
+            /* 主轴居中效果 */
+            justify-content: center;
+            /* 子级之间有等间距*/
+            justify-content: space-between;
+            /* 子级及与盒子间有等距 */
+            justify-content: space-evenly;
+            /* 子级两侧有距离,叠加效果后:子级间的间距是与父级两边距离的两倍 */
+            justify-content: space-around;
+            height: 200px;
+            margin: auto;
+            border: 1px solid #000;
+        }
+        
+        .box div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+
+</html>

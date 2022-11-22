@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 5. 使用line-height让img标签垂直居中问题 */
+        .father {
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            /* 配合vertical进行垂直居中 */
+            line-height: 600px;
+            /* 因为行内块当作文字处理，所以行内块可以同文字属性居中 */
+            text-align: center;
+        }
+        img {
+            vertical-align:middle;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <img src="../images/1.jpg" alt="">
+    </div>
+</body>
+</html>

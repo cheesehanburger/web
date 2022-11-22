@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //简单数据类型，栈里面存的是值
+        let num1 = 10
+        let num2 = num1
+        num1 = 10
+        console.log(num2)    //因为两个数据的存储地区不是同一块地方，所以改一个不影响另一个
+
+        // 引用数据类型，栈里面存储的是地址
+        let obj1 = {
+            age: 18
+        }
+        let obj2 = obj1
+        obj1.age = 20
+        console.log(obj2)
+
+    </script>
+</body>
+</html>

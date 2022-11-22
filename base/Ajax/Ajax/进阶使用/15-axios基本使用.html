@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/axios.js"></script>
+</head>
+
+<body>
+    <button id="btn1">发起get请求</button>
+    <button id="btn2">发起post请求</button>
+    <button id="btn3">使用axios发起get请求</button>
+    <button id="btn4">使用axios发起post请求</button>
+    <script>
+        // axios发送GET请求
+        let get = document.querySelector('#btn1')
+        get.addEventListener('click', function () {
+            let url = 'http://www.liulongbin.top:3006/api/get'
+            let paramsObj = { name: 'han', age: 21 }
+            axios.get(url, { params: paramsObj }).then(function (res) {
+                // res.data才是服务器返回的数据
+                let data = res.data
+                console.log(data)
+            })
+        })
+
+        //axios发送POST请求
+        let post = document.querySelector('#btn2')
+        post.addEventListener('click', function () {
+            let url = 'http://www.liulongbin.top:3006/api/post'
+            let dataObj = { location: '北京', address: '北京顺义' }
+            axios.post(url, dataObj).then(function (res) {
+                // res.data才是服务器返回的数据
+                let data = res.data
+                console.log(data)
+            })
+        })
+
+        // 直接使用axios发送请求
+        // 区别： GET 参数要通过 params 属性提供 POST 数据要通过 data 属性提供
+        // get请求
+        let axget = document.querySelector('#btn3')
+        axget.addEventListener('click', function () {
+            let paramsData = { name: 'han', age: '35' }
+            let url = 'http://www.liulongbin.top:3006/api/get'
+            axios({
+                method: 'GET',
+                url: url,
+                // GET 参数要通过 params 属性提供
+                params: paramsData
+            }).then(function (res) {
+                console.log(res.data)
+            })
+        })
+        // post请求
+
+        let axpost = document.querySelector('#btn4')
+        axpost.addEventListener('click', function () {
+            let dataObj = { location: '北京', address: '北京顺义' }
+            let url = 'http://www.liulongbin.top:3006/api/post'
+            axios({
+                method: 'POST',
+                url: url,
+                // POST 数据要通过 data 属性提供
+                data: dataObj
+            }).then(function (res) {
+                console.log(res.data)
+            })
+        })
+
+    </script>
+</body>
+
+</html>

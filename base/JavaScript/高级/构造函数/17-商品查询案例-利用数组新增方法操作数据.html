@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td,
+        th {
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        input {
+            width: 50px;
+        }
+
+        .search {
+            width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        按照价格查询: <input type="text" class="start"> - <input type="text" class="end"> <button
+            class="search-price">搜索</button> 按照商品名称查询: <input type="text" class="product"> <button
+            class="search-pro">查询</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>产品名称</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        // 利用新增数组方法操作数据
+        var data = [{
+            id: 1,
+            pname: '小米',
+            price: 3999
+        }, {
+            id: 2,
+            pname: 'oppo',
+            price: 999
+        }, {
+            id: 3,
+            pname: '荣耀',
+            price: 1299
+        }, {
+            id: 4,
+            pname: '华为',
+            price: 1999
+        },];
+        let tbody = document.querySelector('table tbody')
+        let startValue = document.querySelector('.start')
+        let endValue = document.querySelector('.end')
+        let searchPrice = document.querySelector('.search-price')
+        let goodsName = document.querySelector('.product')
+        let queryName = document.querySelector('.search-pro')
+        // 渲染数据函数
+        function display(data) {
+            tbody.innerHTML = ''
+            data.forEach(function (value) {
+                let tr = document.createElement('tr')
+                for (let elem in value) {
+                    let td = document.createElement('td')
+                    td.innerHTML = value[elem]
+                    tr.appendChild(td)
+                }
+                tbody.appendChild(tr)
+            })
+        }
+        display(data)
+
+        // 价格区间查询
+        searchPrice.addEventListener('click', function () {
+            let newdata = data.filter(function (value) {
+                return value.price >= startValue.value && value.price <= endValue.value
+            })
+            display(newdata)
+        })
+
+        // 商品名称查询
+        console.log(goodsName)
+        queryName.addEventListener('click',function() {
+            // let newdata = data.filter(function(value) {
+            //     return value.pname === goodsName.value
+            // })
+            // display(newdata)
+            // 如果查询数组中唯一的元素,那么我们还是使用some方法来提高查询的效率
+            data.some(function(value) {
+                let newArr = []
+                if (value.pname === goodsName.value) {
+                    newArr.push(value)
+                    display(newArr)
+                    return true
+                } else {
+                    return false
+                }
+
+            })
+        })
+    </script>
+</body>
+
+</html>

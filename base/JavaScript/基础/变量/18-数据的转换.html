@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 隐式转换
+        // 规则：除了+之外的算数运算符，- * /都会把数据转换成数字类型，而+会转换成字符串
+        console.log(10 + '10') //string
+        console.log(10 - '10') //number
+        console.log(10 * 10) //number
+        console.log('10' * 10) //number
+        // 小技巧 +作为正号，可以转换为数字
+        let num = '10'
+        console.log( + num)  //number
+        console.log(- num)  //number
+        console.log(10 +  +'10')//number 20
+
+        // 显示转换
+
+        // 转化为数字型
+        // Number(数据)，会保留小数，但是数据只能是数字类型的字符，否则返回NaN（Not a Number）
+        console.log(Number('10'))
+        //parseInt(数据)，只保留整数
+        console.log(parseInt('10.111'))
+        // parseFloat(数据),会保留小数
+        console.log(parseFloat('10.999'))
+        // 区别：同样会保留小数，Number只能转换数字类型的字符，但是parseFloat会自动省略非数字类型的部分
+        // 所以parseFloat经常用来过滤数字（但只能过滤以数字开头的字符串）
+
+
+        // 转化为字符型
+        // String(数据)
+        console.log(String(10))
+        // toString()方法           （扩充toString(2)转化为二进制）
+        let age = 18
+        console.log(age.toString())
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .right {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <span>输入内容不合法</span>
+    <script>
+        let input = document.querySelector('input')
+        let span = document.querySelector('span')
+        input.addEventListener('keyup', function (e) {
+            if (e.key === "Enter") {
+                if (/^[a-zA-Z0-9-_]{6,16}$/.test(input.value)) {
+                    span.className = 'right'
+                    span.innerHTML = '输入合法'
+                } else {
+                    span.className = 'error'
+                    span.innerHTML = '只能输入6-16位字符'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

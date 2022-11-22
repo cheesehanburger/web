@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 0 2 0 0 */
+        #father #son {
+            color: blue;
+        }
+        /* 0 1 1 1 */
+        #father p.c2 {
+            color: black;
+        }
+        /* 0 0 2 2 */
+        div.c1 p.c2 {
+            color: red;
+        }
+        /* 继承，权重最低，即便!important*/
+        #father {
+            color: green !important;
+        }
+        /* 继承，权重最低*/
+        div#father.c1 {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1" id="father">
+        <p class="c2" id="son">猜猜我是什么颜色</p>
+    </div>
+</body>
+</html>

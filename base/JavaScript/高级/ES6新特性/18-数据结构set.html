@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // set类似于数组，但是成员的值都是唯一的，没有重复的值
+        // 参数是数组
+        const s = new Set(['a','b','b','c'])
+        // size()方法返回set的长度
+        let size = s.size
+        console.log(s)
+
+        // 利用这个特点可以将数组中的元素去重
+        // 原数组
+        let oldArr = ['a','a','b','c','b']
+        // 构造set
+        let s1 = new Set(oldArr)
+        // 将set再次转化为数组,此时数组已经去重
+        let newArr = [...s1]
+        console.log(newArr)
+    </script>
+</body>
+</html>

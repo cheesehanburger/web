@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Father {
+            constructor(x,y) {
+                this.x = x
+                this.y = y
+            }
+            sum() {
+                console.log(this.x + this.y);
+            }
+        }
+        class Son extends Father {
+            // 若父类的构造器有参数，那么子类构造器中必须调用一次父类的构造器
+            constructor(x,y) {
+                // 注意：super必须在this之前调用
+                super(x,y)
+                this.x = x
+                this.y = y
+            }
+        }
+        let son = new Son(1,2)
+        son.sum()
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- url编码会将不安全字符（中文，日文等），转化为安全字符（字母，数字，标点符号） -->
+    <script>
+        let str = '我是大帅哥'
+        // 使用encodeURL进行编码
+        let str2 = encodeURI(str)
+        console.log(str2)
+
+        // 使用decodeURL进行解码
+        let str3 = decodeURI(str2)
+        console.log(str3)
+    </script>
+</body>
+</html>

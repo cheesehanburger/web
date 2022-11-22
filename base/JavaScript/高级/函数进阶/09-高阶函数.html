@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 高阶函数
+        // 1.将函数作为参数传递
+        function fun(a,b,callback) {
+            console.log(a + b)
+            callback&&callback()   //短路运算
+        }
+        fun(1,2,function() { console.log('我是回调函数')})
+
+        // 2 将函数作为返回值
+        function fn() {
+            return function() { console.log('我是返回函数')}
+        }
+        let f = fn()
+        f()
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+            height: 24px;
+        }
+
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        .allCheck {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th class="allCheck">
+                <input type="checkbox" name="" id="checkAll"> <span class="all">全选</span>
+            </th>
+            <th>商品</th>
+            <th>商家</th>
+            <th>价格</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="check" class="ck">
+            </td>
+            <td>小米手机</td>
+            <td>小米</td>
+            <td>￥1999</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="check" class="ck">
+            </td>
+            <td>小米净水器</td>
+            <td>小米</td>
+            <td>￥4999</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="check" class="ck">
+            </td>
+            <td>小米电视</td>
+            <td>小米</td>
+            <td>￥5999</td>
+        </tr>
+    </table>
+    <script>
+        let checkAll = document.querySelector('#checkAll')
+        let checks = document.querySelectorAll('.ck')
+        let all = document.querySelector('.all')
+        checkAll.addEventListener('click', function () {
+            // 所有按钮选中
+            for (let i = 0; i < checks.length; i++) {
+                checks[i].checked = checkAll.checked
+            }
+            //改变文字
+            all.innerHTML = checkAll.checked ? '取消' : '全选'
+        })
+
+        // 进阶效果：任意一个复选框发生改变，都会反向改变checkAll的选中状态
+        // 首先为每个复选框注册监听事件
+        for (let i = 0; i < checks.length; i++) {
+            checks[i].addEventListener('click', function () {
+                //只要点击一个按钮，就会遍历所有按钮
+                for (let j = 0; j < checks.length; j++) {
+                    if (checks[j].checked === false) {
+                        checkAll.checked = false
+                        all.innerHTML = '全选'
+                        //只要有一个按钮是false，则checkAll则不被选中，且直接跳出函数
+                        return
+                    }
+                }
+                // 如果循环能顺利结束，表示所有的复选框都是被选中的
+                checkAll.checked = true
+                all.innerHTML = '取消'
+            })
+        }
+    </script>
+</body>
+
+</html>

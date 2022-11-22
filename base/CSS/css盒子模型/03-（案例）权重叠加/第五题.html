@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 下面两个都是继承 */
+        /* 那么就看继承哪个父级，哪个父级最亲，哪个选择器生效 */
+
+        /* 0 0 0 2 */
+        div p {
+            color: aqua;
+        }
+        /*0 0 1 0 */
+        .father {
+            color: blue;
+        }
+
+        /* 很显然，上面一个亲一点 */
+    </style>
+</head>
+<body>
+    <div class="father">
+        <p class="son">
+            <span>文字</span>
+        </p>
+    </div>
+</body>
+</html>

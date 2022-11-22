@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* 对div里面的任何子标签都起作用,这就是继承 */
+        div {
+            /* 所有文字控制属性都能继承 */
+            color: red;
+            /* 非文字属性,不能继承 */
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        这是div标签里面的文字
+        <!-- span会默认继承div的属性 -->
+        <span>这是div里面的span</span>
+    </div>
+</body>
+</html>

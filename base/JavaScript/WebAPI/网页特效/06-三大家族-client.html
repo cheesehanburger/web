@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            overflow: auto;
+            padding: 10px;
+            border: 20px solid red;
+            margin: 100px 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+        现在我向里面写入大量的文字
+    </div>
+    <script>
+        let div = document.querySelector('div')
+        // ------client家族--------
+        // 1 获取宽高 
+        // clientWidth和clientHeight,获取元素的可见部分宽高（不包含边框，滚动条等）
+        console.log(div.clientWidth)
+        console.log(div.clientHeight)
+        // 2 获取位置   
+        //  clientTop和clientLeft获取左边框和上边框宽度(不可修改)
+        console.log(div.clientTop)
+        console.log(div.clientLeft)
+
+        // resize事件:窗口尺寸改变时触发
+        window.addEventListener('resize', function(){
+            // 检测屏幕的宽度
+            let size = document.documentElement.clientWidth
+            if (size >= 1920) {
+                document.body.style.backgroundColor = 'pink'
+            } else if (size > 540) {
+                document.body.style.backgroundColor = 'hotpink'
+            } else {
+                document.body.style.backgroundColor = 'deeppink'
+            }
+        })
+    </script>
+</body>
+</html>

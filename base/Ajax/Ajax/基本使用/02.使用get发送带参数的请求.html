@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <button id="btnGET">发起带参数GET的请求</button>
+    <script>
+        $(function () {
+            $('#btnGET').click(function () {
+                // 回调函数的参数res是服务器响应回来的数据
+                // 第二个属性是对象形式，作用是请求资源期间要携带的参数
+                $.get('http://www.liulongbin.top:3006/api/getbooks', { id: 2 }, function (res) {
+                    console.log(res)
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

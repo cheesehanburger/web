@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是原配</li>
+        <li class="address">我是定位元素</li>
+    </ul>
+    <script>
+        // 创建新的标签节点
+        // createElement('标签')
+        let div = document.createElement('div')
+        div.className = 'current'
+
+
+        // 追加节点 （父加子）
+        let ul = document.querySelector('ul')  //获得父元素
+        let li = document.createElement('li')  //创建子元素
+        li.innerHTML = '我是新建的li'
+        //插入父元素的最后：    父元素.appendChild(子元素)
+        ul.appendChild(li)
+
+
+        //插入到某个子元素的前面： 父元素.insertBefore(插入的元素，定位元素(插入这个元素前面))
+        let address = document.querySelector('.address')   //获取定位元素
+        let before = document.createElement('li') //创建追加元素
+        before.innerHTML = '我要追加到前面'
+    
+        ul.insertBefore(before, address)
+
+
+        // 父元素.insertBefore(新元素, 父元素.children[0])   永远追加到父元素最前面
+    </script>
+</body>
+</html>

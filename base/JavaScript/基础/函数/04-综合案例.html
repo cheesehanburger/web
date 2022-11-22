@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let time = +prompt('请输入具体的秒数')
+        function translateTime( time ) {
+            let hours = parseInt((time/3600) % 24)
+            let min = parseInt( (time/60)%60 )
+            let second = time%60
+            document.write(`
+            ${hours <10 ? '0' + hours: hours}小时，
+            ${min < 10 ? '0' + min: min}分钟，
+            ${second < 10 ? '0' + second : second}秒
+            `) 
+        }
+        translateTime(time)
+        confirm('确定删除吗')
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 修饰符
+        //   /表达式/修饰符
+        //  i 是单词 ignore 的缩写，正则匹配时字母不区分大小写
+        //  g 是单词 global 的缩写，匹配所有满足正则表达式的结果
+        // 正则表达式默认只匹配一个，而g就可以让正则表达式匹配多次
+        console.log(/a/i.test('a'));
+        console.log(/a/i.test('A'));
+
+        // 替换
+        // 字符串.replace(/表达式/，替换文本)
+        let str = '我的技术非常123,而且非常234'
+        console.log(str.replace(/[0-9]+/g,'**'));
+    </script>
+</body>
+</html>

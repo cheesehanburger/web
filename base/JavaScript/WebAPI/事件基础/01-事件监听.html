@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        let btn = document.querySelector('button')
+        // 监听事件  三要素：事件源（DOM元素） 事件（如click mouseover） 事件函数（需要采取的动作）
+        // 元素.addEventListener('事件',调用函数)
+        btn.addEventListener('click', function() {
+            alert('点击了按钮')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>删除</button>
+    <ul>
+        <li>第一个孩子</li>
+        <li class = "drop">第二个孩子</li>
+    </ul>
+    <script>
+        //原生dom 删除节点必须通过父元素
+        // 父元素.removeChild(要删除的元素)
+
+        let ul = document.querySelector('ul')       //父元素
+        let btn = document.querySelector('button')
+        let drop = document.querySelector('.drop')  //需要删除的子元素
+        btn.addEventListener('click', function() {
+            ul.removeChild(drop)
+        })
+
+
+        // 隐藏和删除的区别： 删除是完全删除节点，但是隐藏并不会完全删除只是不显示
+    </script>
+</body>
+</html>

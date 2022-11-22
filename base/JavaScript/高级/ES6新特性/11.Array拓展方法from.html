@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrayLike = {
+            "0": "2",
+            "1": "2",
+            "2": "2",
+            "length": 3
+        }
+        // from()方法会将伪数组转化为真数组
+        // 第一个参数是需要转化的伪数组,第二个参数是一个函数(函数的参数是元素,函数的返回值是具体操作),伪数组中有几个元素,函数就被调用几次
+        let arr = Array.from(arrayLike, item => item * 2)
+        console.log(arr)
+    </script>
+</body>
+
+</html>

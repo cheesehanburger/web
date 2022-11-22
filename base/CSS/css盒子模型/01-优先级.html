@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: red;
+        }
+        div {
+            /* !important 加在属性的后面,用于提高优先级 */
+            color: green !important;
+        }
+        .box {
+            color: blue;
+        }
+        #box{
+            color: brown;
+        }
+        /* 注意,!importent并不能提升继承的优先级 */
+    </style>
+</head>
+<body>
+    <!-- 当标签使用了多个选择器的时候,样式冲突时,谁生效-->
+    <!-- 继承 < 标签选择器 < 类选择器 < id选择器 < 行内样式 < !importent-->
+    <div class="box" id="box" style="color: pink;">测试优先级</div>
+</body>
+</html>

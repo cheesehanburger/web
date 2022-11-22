@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击刷新</button>
+    <script>
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function(){
+            // location.reload()方法等价于页面刷新按钮，用来刷新当前页面
+            // 传入参数 true 时表示强制刷新 ctrl + F5,直接从网上获取最新数据，而不是从本地
+            location.reload(true)
+            
+        })
+        document.write(new Date().toLocaleString())
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 改变this指向的三种方法： call() apply() bind()
+
+        //  1.apply()
+        let obj = {}
+        function f(arr) {
+            console.log(this)
+            console.log(arr)
+        }
+        // 也是调用函数，改变函数内部this指向
+        // 但是他的参数必须是数组（伪数组）
+        f.apply(obj, ['pink'])
+        
+        // 使用场景:因此 apply 主要跟数组有关系，比如使用 Math.max() 求数组的最大值
+        // 数组里面的元素会变成max()函数的参数
+        let arr = [1, 66, 3, 99, 4]
+        let max = Math.max.apply(Math, arr)
+        console.log(max);
+    </script>
+</body>
+
+</html>

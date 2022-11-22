@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .aside {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .item {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content {
+            width: 660px;
+            margin: 400px auto;
+        }
+
+        .neirong {
+            height: 300px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content1 {
+            background-color: red;
+        }
+
+        .content2 {
+            background-color: blue;
+        }
+
+        .content3 {
+            background-color: orange;
+        }
+
+        .content4 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="aside">
+        <div class="item active" id="0">男装/女装</div>
+        <div class="item" id="1">儿童服装/游乐园</div>
+        <div class="item" id="2">电子产品</div>
+        <div class="item" id="3">电影/美食</div>
+    </div>
+
+    <div class="content">
+        <div class="neirong content1">男装/女装</div>
+        <div class="neirong content2">儿童服装/游乐园</div>
+        <div class="neirong content3">电子产品</div>
+        <div class="neirong content4">电影/美食</div>
+    </div>
+
+    <script>
+        // 侧边栏
+        let aside = document.querySelector('.aside')
+        // 内容
+        let contents = document.querySelectorAll('.neirong')
+        // 通过委托添加点击事件
+        aside.addEventListener('click', function (a) {
+            // 列表选中效果
+            // 排他
+            document.querySelector('.aside .active').classList.remove('active')
+            // 用我
+            a.target.classList.add('active')
+
+            // 对应模块定位效果
+            // 通过点击列表的id找到对应的模块
+            //将页面的scrollTop = 内容模块的offsetTop
+            switch (+(a.target.id)) {
+                case 0:
+                    document.documentElement.scrollTop = contents[0].offsetTop
+                    break
+                case 1:
+                    document.documentElement.scrollTop = contents[1].offsetTop
+                    break
+                case 2:
+                    document.documentElement.scrollTop = contents[2].offsetTop
+                    break
+                case 3:
+                    document.documentElement.scrollTop = contents[3].offsetTop
+                    break
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // if (true) {
+        //     var b = 20
+        // }
+        // console.log(b)
+        // 1.let关键字具有块级作用域
+        // if (true) {
+        //     let b = 20
+        // }
+        // console.log(b)    //会报错
+        // 2.不存在变量提升:只能先声明后使用
+        let num = 3
+        // 3.let 变量存在暂时性死区
+        // if (true) {
+        //     console.log(num)   //因为在块中声明了变量num,所以num与块绑定了,会提示变量未定义的错误
+        //     let num = 20;
+        // }
+        // 经典面试题目
+        // 解析:因为var申明的i是全局变量,函数输出的是全局作用域下的值
+        //而let具有块级作用域,每个块级作用域中的变量是不同的
+        var arr=[]
+        for (var i = 0; i < 3; i++) {
+            arr[i] = function() {
+                console.log(i)
+            }
+        }
+        arr[1]()
+        arr[2]()
+        let arr1=[]
+        for (let i = 0; i < 3; i++) {
+            arr1[i] = function() {
+                console.log(i)
+            }
+        }
+        arr1[1]()
+        arr1[2]()
+    </script>
+</body>
+</html>

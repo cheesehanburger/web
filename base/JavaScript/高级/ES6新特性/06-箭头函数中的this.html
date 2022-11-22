@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 箭头函数不绑定this,箭头函数中的this,指向的是函数定义位置的上下文this
+        // 与常规函数不同
+        let obj = {
+            name: 'han'
+        }
+        function fun() {
+            console.log(this)
+            return () => console.log(this)   //这里的this就是fun() 中的this
+        }
+        let resFn = fun.call(obj)
+        resFn()
+    </script>
+</body>
+
+</html>
