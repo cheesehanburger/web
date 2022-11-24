@@ -6,7 +6,7 @@ const server = http.createServer()
 server.on('request',function(req,res) {
     console.log('someone visit our server')
 })
-// 4 启动服务器
+// 4 启动服务器 第一个参数是端口号
 server.listen(8080,function() {
     console.log('server running at http://127.0.0.1:8080')
 })
