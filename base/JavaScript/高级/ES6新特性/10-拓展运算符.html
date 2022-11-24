@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div>1</div>
     <div>2</div>
@@ -16,15 +18,24 @@
     <div>7</div>
     <script>
         // 拓展运算符可以将数组拆分成以逗号隔开的参数序列
-        let arr = [1,2,3]
+        let arr = [1, 2, 3]
         console.log(...arr)     //...arr相当于:1,2,3
+
+        // 拓展运算符还可以展开对象
+        let obj = { name: 'han', age: 16 }
+        let newObj =
+        {
+            ...obj,
+            address: '南京'
+        }
+        console.log(newObj)
 
 
         // 应用:  扩展运算符运用于数组合并
         // 方法一:
-        let arr1 = [1,2,3,4]
-        let arr2 = [5,6,7,8]
-        let mix = [...arr1,...arr2]   //相当于: [1,2,3,4,5,6,7,8]
+        let arr1 = [1, 2, 3, 4]
+        let arr2 = [5, 6, 7, 8]
+        let mix = [...arr1, ...arr2]   //相当于: [1,2,3,4,5,6,7,8]
 
         //方法二:
         // push()方法可以接受多个元素
@@ -39,4 +50,5 @@
         console.log(odivs)
     </script>
 </body>
+
 </html>
