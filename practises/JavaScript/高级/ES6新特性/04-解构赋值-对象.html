@@ -29,6 +29,19 @@
         // 方法二:变量名字与属性名不同
         let {name:uname,age:uage,sex:usex} = Person   //uname uage 属于别名
         console.log(uname,uage,usex)
+        // 应用：
+        // 1.可以将旧对象的属性解构给新对象
+        let newpeople = {
+            ...Person
+        }
+        // 2.新对象可以添加修改解构对象属性的值以及添加新属性
+        console.log(newpeople)
+        let newpeople2 = {
+            ...Person,
+            name:'laohan',         //修改属性值
+            address: 'nanjing'     //添加新属性
+        } 
+        console.log(newpeople2)
     </script>
 </body>
 

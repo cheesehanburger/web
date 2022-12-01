@@ -26,7 +26,7 @@
 
                 // 通过fromdata快速获得表单数据,接受的是dom元素
                 let fd = new FormData($(this)[0])
-
+                console.log(fd)
                 let xhr = new XMLHttpRequest()
                 xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata')
                 xhr.send(fd)
