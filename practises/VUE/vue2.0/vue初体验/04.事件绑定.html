@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>count 的值是：{{ count }}</p>
+        <!-- 在绑定的时候可以传参数 -->
+        <button v-on:click="addCount(2)">+2</button>
+        <!-- v-on可以简写为@ -->
+        <button @click="subCount">-1</button>
+    </div>
+
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+        const vm = new Vue({
+
+            el: '#app',
+
+            data: {
+                username: 'zhangsan',
+                count: 0
+            },
+
+            //methods中定义事件处理函数
+            methods: {
+                // addCount: function () {
+                //     count++
+                // }
+                // 开发中常用简写的方式
+                addCount(n) {
+                    this.count+=n
+                },
+                subCount() {
+                    this.count--
+                },
+            }
+        })
+
+    </script>
+</body>
+
+</html>

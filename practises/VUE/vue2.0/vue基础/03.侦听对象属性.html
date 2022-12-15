@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <input type="text" v-model="info.username">
+        <input type="text" v-model="info.age">
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                info: {
+                    username: 'han',
+                    age: 23
+                }
+            },
+            // 在watch中定义侦听器
+            watch: {
+                //方法格式的侦听器，对象的属性变化，不会触发侦听器
+                // info(){
+                //     console.log('触发了')
+                // }
+
+                // 方法一
+                //对象格式的侦听器，对象属性变化，侦听到的是整个对象
+                /* info: {
+                 handler:function(newVal) {
+                     console.log('触发了' + newVal.username)
+                 },
+                 // deep选项,开启深度侦听，对象中的属性变化也能侦听，默认是false
+                 deep:true,
+                 // immediate选项,让监听器自动触发一次,默认是false
+                 immediate: true,
+                }, */
+
+                // 方法二
+                // 如果想要侦听的是对象的属性变化，则必须包裹一层单引号
+                'info.username': function (newVal) {
+                    console.log('触发了' + newVal)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

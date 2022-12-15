@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <input type="text" v-model="username">
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username: ''
+            },
+            // 在watch中定义侦听器
+            watch: {
+                // ------函数格式的侦听器----
+                // 想要监听的数据，直接以该数据名作为函数名
+                // 缺点1：无法在刚进入页面的时候自动触发
+                // 缺点2：如果侦听的是一个对象，如果对象的属性发生了变化，是侦听不到的
+                // 新值在前，旧值在后
+                username:function(newVal, oldVal) {
+                    if (newVal === '') return
+                    // 发起ajax请求，判断newVal是否被占用
+                    $.get('https://www.escook.cn/api/finduser/' + newVal, res => {
+                        console.log(res)
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- 插值表达式是不能给属性使用的，要想给属性绑定，需要使用v-bind -->
+        <input type="text" v-bind:placeholder="tips">
+        <hr>
+        <!-- vue指定 v-bind: 可以简写为 : -->
+        <img :src="photo" alt="" style="height: 30px;">
+
+        <hr>
+        <!-- vue 提供的模板渲染语法还支持 Javascript 表达式的运算 -->
+        <div>1+2的结果是:{{1+2}}</div>
+        <div>{{tips}} 的反转结果是: {{tips.split('').reverse().join('')}}</div>
+        <div :title="'box' + index">这是一个div</div>
+    </div>
+
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+        const vm = new Vue({
+
+            el: '#app',
+
+            data: {
+                tips: '请输入用户名',
+                photo: 'https://www.baidu.com/img/flexible/logo/pc/index_gray.png',
+                index: 3
+            }
+        })
+
+    </script>
+</body>
+
+</html>

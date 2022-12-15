@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div id="app">
+        <button @click="change">toggle flag</button>
+        <!-- v-if是动态的删除和添加元素 ，如果默认不需要显示，且后面也基本无需展示的元素，他的性能更好-->
+        <p v-if="flag">这是被v-if控制的元素</p>
+        <!--v-else 指令必须配合 v-if 指令一起使用，否则它将不会被识别！ -->
+        <p v-else>这是被v-else控制的元素</p>
+        
+        <!-- v-show是添加和移除display:none的样式，如果需要频繁的切换显示状态，他的性能更好 -->
+        <p v-show="flag">这是被v-show控制的元素</p>
+
+        
+
+    </div>
+
+   
+    <script src="./lib/vue-2.6.12.js"></script>
+    
+    <script>
+        const vm = new Vue({
+       
+            el: '#app',
+            data:{
+                flag:true
+            },
+            methods: {
+                change() {
+                    this.flag = !this.flag
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

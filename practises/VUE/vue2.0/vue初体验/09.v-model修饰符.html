@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- .number修饰符可以将输入值自动转化为数字类型 -->
+        <input type="text" v-model.number="n1"> + <input type="text" v-model.number="n2"> = <span>{{n1+n2}}</span>
+        <hr>
+        <!-- .trim修饰符可以将输入值自动去除首尾空格 -->
+        <input type="text" v-model.trim="username">
+        <button @click="getName">获取用户名</button>
+        <!-- .lazy修饰符可以在"change"而非"input"时更新 -->
+        <input type="text" v-model.lazy="username">
+    </div>
+
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username: 'zhangsan',
+                n1: 1,
+                n2: 2
+            },
+            methods:{
+                getName() {
+                    console.log(this.username)
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
