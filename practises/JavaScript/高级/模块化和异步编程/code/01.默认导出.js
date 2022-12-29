@@ -9,3 +9,4 @@ export default {
     n1,
     show
 }
+
