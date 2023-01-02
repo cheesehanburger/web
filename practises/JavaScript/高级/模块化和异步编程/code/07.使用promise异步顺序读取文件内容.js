@@ -28,6 +28,3 @@ thenfs.readFile('./files/11.txt', 'utf8')    //返回值是一个promise对象
     .catch(err => {
         console.log(err.message)
     })
-
-
-
