@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./lib/axios.js"></script>
+    <script>
+        // axios的返回值是promise
+        let result = axios({
+            method: 'get',
+            url: 'http://www.liulongbin.top:3006/api/getbooks',
+            // 查询参数(get)
+            params: {
+                id: 1,
+            },
+            // 请求体(post)
+            data:{}
+        })
+        result.then(function (res) {
+            // 在axios中,得到的结果中的res.data才是真正服务器返回的数据
+            // 原因:axios把真实的数据进行了包装
+            console.log(res.data)
+        })
+    </script>
+</body>
+
+</html>
