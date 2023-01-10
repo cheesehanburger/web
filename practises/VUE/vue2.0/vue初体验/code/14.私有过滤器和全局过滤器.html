@@ -19,7 +19,7 @@
 
     <script src="./lib/vue-2.6.12.js"></script>
     <script>
-
+        // 全局过滤器(常用):
         // 使用Vue.filter全局过滤器的定义方式
         Vue.filter('capi', (str) => {
             const first = str.charAt(0).toUpperCase()
@@ -33,13 +33,16 @@
                 message: 'hello vue.js'
             },
             // 私有过滤器
-            // 就近调用私有过滤器
-            capi(msg) {
-                const first = msg.charAt(0).toUpperCase()
-                const other = msg.slice(1)
-                msg = first + other
-                return msg
+            // 注意:就近调用私有过滤器
+            filters: {
+                capi(msg) {
+                    const first = msg.charAt(0).toUpperCase()
+                    const other = msg.slice(1)
+                    msg = first + other + ' 私有'
+                    return msg
+                }
             }
+
         })
 
         const vm2 = new Vue({

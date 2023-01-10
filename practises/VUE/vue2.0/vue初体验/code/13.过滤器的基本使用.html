@@ -12,7 +12,8 @@
         <!-- 过滤器函数的形参永远都是管道符前面的值 -->
         <p> message 的值是:{{message | capi}}</p>
 
-        <!-- 拓展：过滤器可以连续多个调用 -->
+        <!-- 拓展：过滤器可以连续多个串联调用 -->
+        <p>调用多个filter:{{message | capi | other}}</p>
         <!-- 调用过滤器的时候，可以传参 -->
     </div>
 
@@ -32,6 +33,10 @@
                     const other = msg.slice(1)
                     msg = first + other
                     // 过滤器函数必须要有返回值
+                    return msg
+                },
+                other(msg) {
+                    msg += ' + other filter'
                     return msg
                 }
             }
