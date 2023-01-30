@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = ['han', 'lu', 'zhao', 'li']
+        // froeach一旦开始就不会停止了
+        // arr.forEach((item, index) => {
+        //     if (item === 'zhao')
+        //         console.log(index)
+        // })
+        // 但是some方法找到对应的项之后可以通过return true语法终止循环
+        arr.some((item, index) => {
+            if (item === 'zhao') {
+                console.log(index)
+                // 固定写法
+                return true
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [
+            { id: 1, name: '西瓜', statue: true, price: 10, count: 1 },
+            { id: 2, name: '柠檬', statue: false, price: 8, count: 2 },
+            { id: 3, name: '草莓', statue: true, price: 25, count: 3 },
+        ]
+
+        // 需求：把购物车中已经勾选的水果，总价叠加起来
+        // 通常的实现方式
+        // const newArr = arr.filter(item => item.statue === true)
+        // console.log(newArr)
+        // let sum = 0
+        // newArr.forEach(item => {
+        //     sum += item.price * item.count
+        // })
+        // console.log(sum)
+
+        // 使用reduce方法
+        // arr.reduce((累加的结果，当前的循环项) => { }, 初始值},最终会返回一个值
+        const newArr = arr.filter(item => item.statue === true)
+        const total = newArr.reduce((sum, item) => {
+            return sum += item.count * item.price
+        }, 0)
+        console.log(total)
+    </script>
+</body>
+
+</html>

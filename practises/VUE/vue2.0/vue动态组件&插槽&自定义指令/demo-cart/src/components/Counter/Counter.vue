@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import bus from '@/components/eventbus.js'
-
 export default {
   props: {
     goodsCount: {
@@ -32,13 +30,11 @@ export default {
 
   methods: {
     addCount() {
-      const obj = { id: this.goodsId, count: this.goodsCount + 1 }
-      bus.$emit('changeCount', obj)
+      this.$emit('changeCount', this.goodsCount + 1)
     },
     reCount() {
       if (this.goodsCount <= 1) return
-      const obj = { id: this.goodsId, count: this.goodsCount - 1 }
-      bus.$emit('changeCount', obj)
+      this.$emit('changeCount', this.goodsCount - 1)
     }
   }
 }

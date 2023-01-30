@@ -15,7 +15,9 @@
       :checked="item.goods_state"
       @changed="setNewVal"
     >
+      <Counter :goodsCount="item.goods_count" @changeCount="getNewCount(item,$event)"></Counter>
     </Goods>
+
     <!-- 结算栏 -->
     <Footer
       :fullState="fullState"
@@ -28,11 +30,11 @@
 
 <script>
 import axios from 'axios'
-import bus from '@/components/eventbus.js'
 // 导入组件
 import Header from '@/components/Header/Header.vue'
 import Goods from '@/components/Goods/Goods.vue'
 import Footer from '@/components/Footer/Footer.vue'
+import Counter from '@/components/Counter/Counter.vue'
 
 export default {
   data() {
@@ -67,7 +69,8 @@ export default {
   components: {
     Header,
     Goods,
-    Footer
+    Footer,
+    Counter
   },
   methods: {
     // 封装请求数据的方法
@@ -94,20 +97,16 @@ export default {
       this.goodsList.forEach((item) => {
         item.goods_state = checked
       })
+    },
+
+    // 获取counter组件发过来的最新的数量值
+    getNewCount(item,e) {
+      item.goods_count = e
     }
   },
 
   created() {
     this.initCartList()
-    // 同步数组中的count
-    bus.$on('changeCount', (val) => {
-      this.goodsList.some((item) => {
-        if (item.id === val.id) {
-          item.goods_count = val.count
-          return true
-        }
-      })
-    })
   }
 }
 </script>

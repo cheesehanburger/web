@@ -25,7 +25,7 @@
         <!-- 商品价格 -->
         <span class="goods-price">￥{{ price }}</span>
         <!-- 商品的数量 -->
-        <Counter :goodsCount="count" :goodsId="id"> </Counter>
+        <slot></slot>
       </div>
     </div>
   </div>
@@ -67,7 +67,7 @@ export default {
     }
   },
   components: {
-    Counter
+
   }
 }
 </script>
