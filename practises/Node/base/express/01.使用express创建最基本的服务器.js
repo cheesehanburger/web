@@ -16,19 +16,19 @@ app.get('/user', (req, res) => {
     )
 
 })
-app.post('/user', (req,res) => {
+app.post('/user', (req, res) => {
     // 调用express的res.send方法向客户响应一个文本字符串
     res.send('请求成功')
 })
 
-app.get('/',(req,res)=> {
+app.get('/', (req, res) => {
     // 客户端请求?name=han&age=20
     // req.query以对象的方式访问到客户端通过查询字符串的形式，发送到服务器的参数,默认是个空对象
     res.send(req.query)
 })
 
 // 注意:这里的id是一个动态的参数
-app.get('/user/:id/:name',(req,res)=> {
+app.get('/user/:id/:name', (req, res) => {
     // req.params是动态匹配到的url参数，默认也是一个空对象
     res.send(req.params)
 })
