@@ -6,7 +6,7 @@
     <button @click="changeLeft">重置left组件中的count值</button>
 
     <hr />
-    <input type="text" @blur="showButton" v-if="inputVisible" ref="iptRef">
+    <input type="text" @blur="showButton" v-if="inputVisible" ref="iptRef" />
     <button v-else @click="showInput">展示输入框</button>
     <hr />
 
@@ -23,24 +23,24 @@ export default {
   data() {
     return {
       //默认值是false，表示默认不展示输入框，展示按钮
-      inputVisible:false
+      inputVisible: false
     }
   },
-  methods:{
+  methods: {
     changeShow() {
       console.log(this)
       // 在Vue自带的$ref属性中获取dom元素
       this.$refs.myh1.style.color = 'red'
     },
-    changeLeft(){
+    changeLeft() {
       // 在Vue自带的$ref属性中获取组件实例
-        this.$refs.myLeft.count = 0
+      this.$refs.myLeft.count = 0
     },
     showInput() {
       this.inputVisible = true
       // 注意：当有些步骤需要等到dom重新渲染完毕之后才执行，就使用该方法
       // 他的作用是：会把回调函数推迟到下一个Dom更新之后执行
-      this.$nextTick(()=>{
+      this.$nextTick(() => {
         this.$refs.iptRef.focus()
       })
     },
@@ -48,9 +48,9 @@ export default {
       this.inputVisible = false
     }
   },
-  components:{
-    Left,
-  },
+  components: {
+    Left
+  }
 }
 </script>
 

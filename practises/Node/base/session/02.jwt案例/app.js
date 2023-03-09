@@ -35,7 +35,7 @@ app.post('/api/login', function (req, res) {
   // TODO_03：在登录成功之后，调用 jwt.sign() 方法生成 JWT 字符串。并通过 token 属性发送给客户端
   // 参数一：用户信息对象 参数二：加密的密钥 参数三：配置的对象，可以配置当前token的有效期
   // 注意，前外不要把密码加载到token中
-  const tokenStr = jwt.sign({ username: userinfo.username }, secretKey, { expiresIn: '30s' })
+  const tokenStr = jwt.sign({ username: userinfo.username }, secretKey, { expiresIn: '1h' })
   res.send({
     status: 200,
     message: '登录成功！',
@@ -61,10 +61,6 @@ app.use((err, req, res, next) => {
     return res.send({
       status: 401,
       message: '无效的token'
-    })
-    res.send({
-      status:500,
-      message:'未知错误'
     })
   }
 

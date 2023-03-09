@@ -14,14 +14,14 @@ const expressJWT = require('express-jwt')
 
 // 跨域
 const cors = require('cors')
-const e = require('express')
 app.use(cors())
+
 // 再路由之前，配置解析token的中间件，不在unless里面的都需要进行身份认证
 app.use(expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] }))
 // 解析表单数据
 app.use(express.urlencoded({ extended: false }))
 // 托管静态资源文件
-app.use('/uploads',express.static('./uploads'))
+app.use('/uploads', express.static('./uploads'))
 // 自定义一个处理错误的中间件
 app.use(function (req, res, next) {
     res.cc = function (err, status = 1) {
@@ -39,11 +39,11 @@ app.use(function (req, res, next) {
 // 用户路由
 app.use('/api', userRouter)
 // 用户信息路由
-app.use('/my',userinfoRouter)
+app.use('/my', userinfoRouter)
 // 文章分类路由
-app.use('/my/article',artCateRouter)
+app.use('/my/article', artCateRouter)
 // 文章路由
-app.use('/my/article',articleRouter)
+app.use('/my/article', articleRouter)
 
 
 // 全局错误中间件

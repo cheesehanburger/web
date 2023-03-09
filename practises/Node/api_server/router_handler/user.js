@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs')
 // 导入jwt
 const jwt = require('jsonwebtoken')
 //引入密钥
-const config = require('../config') 
+const config = require('../config')
 
 // 注册路由
 exports.regUser = (req, res) => {
@@ -29,7 +29,7 @@ exports.regUser = (req, res) => {
 
 
         //进行新用户数据的添加
-        //使用bcrypt.hashSync()对密码进行加密
+        //每次用户数据的添加，使用bcrypt.hashSync()对密码进行加密
         userinfo.password = bcrypt.hashSync(userinfo.password, 10)
         const sql = 'insert into ev_users set ?'
         db.query(sql, { username: userinfo.username, password: userinfo.password }, (err, results) => {
@@ -69,17 +69,17 @@ exports.login = (req, res) => {
         // 剔除密码和=头像，user 中只保留了用户的 id, username, nickname, email 这四个属性的值
         const user = {
             ...results[0],
-            password:'',
-            user_pic:''
+            password: '',
+            user_pic: ''
         }
         // 将用户信息加密生成token字符串
         const tokenStr = jwt.sign(user, config.jwtSecretKey, { expiresIn: config.expiresIn })
         // 发送给客户端
         res.send({
-            status:0,
-            message:'登录成功',
+            status: 0,
+            message: '登录成功',
             // 为了方便客户端使用Token，在服务器上直接拼接上Bearer 前缀
-            token:'Bearer ' + tokenStr
+            token: 'Bearer ' + tokenStr
         })
     })
 }

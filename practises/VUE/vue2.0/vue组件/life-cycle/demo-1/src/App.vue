@@ -9,7 +9,7 @@
       <!-- ***组件的使用步骤*** -->
       <!-- 渲染 Left 组件和 Right 组件 -->
       <!-- 3.以标签的形式直接使用注册过的组件 -->
-      <Left></Left>
+      <MyLeft></MyLeft>
       <Right></Right>
     </div>
   </div>
@@ -22,19 +22,18 @@ import Right from '@/components/Right.vue'
 import Test from '@/components/Test.vue'
 
 export default {
-  data:function(){
+  data: function () {
     return {
-      flag:true,
+      flag: true
     }
   },
-  methods:{
-
-  },
+  methods: {},
   // 2.在components中注册组件（私有子组件）
-  components:{
-    Left,
+  components: {
+    // 可以为引入的组件重命名，但通常情况下为默认使用引入名
+    MyLeft: Left,
     Right,
-    Test,
+    Test
   }
 }
 </script>

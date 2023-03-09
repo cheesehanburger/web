@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <h1>App 根组件</h1>
-    
+
     <a href="#/home">首页</a>
     <a href="#/movie">电影</a>
     <a href="#/about">关于</a>

@@ -1,6 +1,6 @@
 <template>
   <div class="left-container">
-    <h3>Left 组件 ---- {{count}}</h3>
+    <h3>Left 组件 ---- {{ count }}</h3>
     <button @click="count++">+1</button>
   </div>
 </template>
@@ -8,9 +8,10 @@
 <script>
 export default {
   // 可以使用name属性指定组件名称，
-  // 对比： ‘注册名称’主要的应用场景是，以标签的形式，把注册好的组件，渲染和使用到页面结构之中
+  // 对比：
+  // 组件引入时候的‘注册名称’主要的应用场景是，以标签的形式，把注册好的组件，渲染和使用到页面结构之中
   // 组件声明时候的‘name名称’主要的应用场景是，结合<keep-alive>标签实现组件缓存功能，以及在调试工具中看到组件的name名称
-  name:'myLeft',
+  name: 'myLeft',
   data() {
     return {
       count: 1
